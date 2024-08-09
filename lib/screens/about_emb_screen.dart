@@ -1,35 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:iderma/components/top_navigation_bar.dart';
 
-void main() {
-  runApp(MyApp());
-}
+class AboutEmbScreen extends StatelessWidget {
+  const AboutEmbScreen({super.key});
 
-class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                'iDerma',
-                style: TextStyle(
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF2C3D8F), // Set text color using Color class
-                ),
-              ),
-              IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () {
-                  // Add your menu button functionality here
-                },
-              ),
-            ],
-          ),
-        ),
+        
+        appBar: const TopNavigationAppBar(),
+
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),

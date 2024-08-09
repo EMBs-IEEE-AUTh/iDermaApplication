@@ -1,7 +1,9 @@
+// Created by Aristotelis Pallasidis
 import 'package:flutter/material.dart';
+import 'package:iderma/screens/home_screen.dart';
 
 class TopNavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
-
+  const TopNavigationAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +22,17 @@ class TopNavigationAppBar extends StatelessWidget implements PreferredSizeWidget
           IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () {
-              
-              // Navigator.pushNamed(context, '/main_menu');
-              
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => const HomeScreen()),
+              );
             },
           ),
         ],
       ),
     );
-
-
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   
 }

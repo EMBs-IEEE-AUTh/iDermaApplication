@@ -1,14 +1,13 @@
+// Created by Aristotelis Pallasidis
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:iderma/components/top_app_bar.dart';
+import 'package:iderma/components/top_navigation_bar.dart';
 
 
-/// Flutter code sample for [NavigationBar].
 
-void main() => runApp(const NavigationBarApp());
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
-class NavigationBarApp extends StatelessWidget {
-  const NavigationBarApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,31 +32,8 @@ class _NavigationExampleState extends State<NavigationExample> {
   Widget build(BuildContext context) {
     Theme.of(context);
     return Scaffold(
-      appBar: TopNavigationAppBar(),
 
-      // ----------TOP NAVIGATION BAR----------------------------------------------------
-      // appBar: AppBar(
-      //   title: Row(
-      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //     children: [
-      //       const Text(
-      //         'iDerma',
-      //         style: TextStyle(
-      //           fontSize: 32,
-      //           fontWeight: FontWeight.bold,
-      //           color: Color(0xFF2C3D8F), // Set text color using Color class
-      //         ),
-      //       ),
-      //       IconButton(
-      //         icon: const Icon(Icons.menu),
-      //         onPressed: () {
-      //           // Add your menu button functionality here
-      //         },
-      //       ),
-      //     ],
-      //   ),
-      // ),
-      // ----------TOP NAVIGATION BAR----------------------------------------------------
+      appBar: const TopNavigationAppBar(),
 
       // ----------BOT NAVIGATION BAR----------------------------------------------------
       bottomNavigationBar: NavigationBar(
@@ -310,12 +286,10 @@ class _NavigationExampleState extends State<NavigationExample> {
                 const SizedBox(height: 30),
                 GestureDetector(
                   onTap: () {
-                    // Add your onTap functionality here
+                    // TODO: Uncomment the Scan Screen 
                     // Navigator.push(
                     //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => ScanScreen()
-                    //   )
+                    //   MaterialPageRoute(builder: (context) => const ScanScreen()),
                     // );
                     if (kDebugMode) {
                       print('Scan button tapped!');

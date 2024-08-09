@@ -1,17 +1,9 @@
+// Created by Aristotelis Pallasidis
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+class LoginWithEmailScreen extends StatelessWidget {
+  const LoginWithEmailScreen({super.key});
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: LoginScreen(),
-    );
-  }
-}
-
-class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
