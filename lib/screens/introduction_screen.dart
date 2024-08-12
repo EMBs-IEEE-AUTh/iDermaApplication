@@ -1,27 +1,14 @@
+// Created by Ioanna Vrachni
 import 'package:flutter/material.dart';
-import 'SignUp.dart'; // Import the SignUp page
+import 'package:iderma/screens/home_screen.dart';
+// import 'SignUp.dart';
 
+class IntroductionScreen extends StatelessWidget {
+  const IntroductionScreen({super.key});
 
-
-//--------------Ιωάννα------------------
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: LogoPage(),
-    );
-  }
-}
-
-class LogoPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: LogoPageContent(),
@@ -31,6 +18,8 @@ class LogoPage extends StatelessWidget {
 }
 
 class LogoPageContent extends StatelessWidget {
+  const LogoPageContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,11 +28,13 @@ class LogoPageContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
             Image.asset(
-              'assets/logo.png',
+              'assets/images/emb-sign.png',
               width: 150,
             ),
-            SizedBox(height: 20),
+
+            const SizedBox(height: 20),
             const Text(
               'EMB',
               style: TextStyle(
@@ -52,6 +43,7 @@ class LogoPageContent extends StatelessWidget {
                 fontSize: 77,
               ),
             ),
+
             const SizedBox(height: 20),
             const Text(
               'Aristotle\nUniversity of\nThessaloniki',
@@ -62,20 +54,22 @@ class LogoPageContent extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 30),
+
+            const SizedBox(height: 30),
             Image.asset(
-              'assets/details.png',
+              'assets/images/introduction/details.png',
               width: 250,
             ),
-            SizedBox(height: 40), // Adjust the height as needed
+
+            const SizedBox(height: 40), // Adjust the height as needed
             GestureDetector(
               onTap: () {
-                // Navigate to the SignUp page
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUp()),
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
                 );
               },
+              
               child: const Text(
                 'Tap to continue',
                 style: TextStyle(

@@ -8,9 +8,7 @@ class AboutEmbScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        
         appBar: const TopNavigationAppBar(),
-
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -29,8 +27,8 @@ class AboutEmbScreen extends StatelessWidget {
                             0xFF2C3D8F), // Set text color using Color class
                       ),
                     ),
-                    Image.network(
-                      'https://dummyimage.com/90x90/000/fff',
+                    Image.asset(
+                      'assets/images/emb-sign.png',
                       height: 60,
                     ),
                   ],
