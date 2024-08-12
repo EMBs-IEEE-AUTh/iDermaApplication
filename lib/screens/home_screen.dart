@@ -3,11 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:iderma/components/top_navigation_bar.dart';
 
-
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +29,9 @@ class _NavigationExampleState extends State<NavigationExample> {
   Widget build(BuildContext context) {
     Theme.of(context);
     return Scaffold(
-
       appBar: const TopNavigationAppBar(),
 
-      // ----------BOT NAVIGATION BAR----------------------------------------------------
+      // ---------- BOTTOM NAVIGATION BAR ----------
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -62,16 +58,16 @@ class _NavigationExampleState extends State<NavigationExample> {
           ),
         ],
       ),
-      // ----------BOT NAVIGATION BAR----------------------------------------------------
+      // ---------- BOTTOM NAVIGATION BAR ----------
 
       body: [
         /// Home page
         SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 0.0),
             child: Column(children: [
               const Padding(
-                padding: EdgeInsets.only(left: 20.0, top: 12, bottom: 30),
+                padding: EdgeInsets.only(left: 16.0, top: 16, bottom: 32),
                 child: Row(
                   children: [
                     CircleAvatar(
@@ -87,6 +83,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                           'Good morning',
                           style: TextStyle(
                               fontSize: 24,
+                              fontFamily: 'Inter',
                               fontWeight: FontWeight.w300,
                               color: Colors.black),
                         ),
@@ -94,7 +91,8 @@ class _NavigationExampleState extends State<NavigationExample> {
                           'Aristotelia' '!',
                           style: TextStyle(
                             fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
                             color: Colors.black,
                           ),
                         ),
@@ -104,7 +102,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 20, right: 20),
+                margin: const EdgeInsets.only(left: 16, right: 16),
                 padding: const EdgeInsets.only(top: 6, bottom: 6),
                 decoration: BoxDecoration(
                   color: const Color(0xFF2C3D8F),
@@ -113,7 +111,7 @@ class _NavigationExampleState extends State<NavigationExample> {
               ),
               const SizedBox(height: 0),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -121,6 +119,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                       'Latest Results',
                       style: TextStyle(
                         fontSize: 24,
+                        fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
                         color: Color(0xFF2C3D8F),
                       ),
@@ -130,6 +129,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                       'Nothing suspicious yet' '!',
                       style: TextStyle(
                         fontSize: 18,
+                        fontFamily: 'Inter',
                         fontWeight: FontWeight.w400,
                         color: Colors.black,
                       ),
@@ -138,21 +138,21 @@ class _NavigationExampleState extends State<NavigationExample> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 16),
                     const Text(
                       'Nearby Doctors',
                       style: TextStyle(
                         fontSize: 24,
+                        fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
                         color: Color(0xFF2C3D8F),
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 8),
                     SizedBox(
                       height: 100, // Adjust height as needed
                       child: ListView(
@@ -171,20 +171,22 @@ class _NavigationExampleState extends State<NavigationExample> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 16),
                     const Text(
                       'Fun Facts',
                       style: TextStyle(
                         fontSize: 24,
+                        fontFamily: 'Inter',
                         fontWeight: FontWeight.w600,
                         color: Color(0xFF2C3D8F),
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 8),
                     const Text(
                       "Did you know that your skin is the largest organ of your body? An adult's skin can cover an area of around 22 square feet (2 square meters) on average.",
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
+                          fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
                           color: Colors.black),
                     ),
@@ -195,139 +197,156 @@ class _NavigationExampleState extends State<NavigationExample> {
           ),
         ),
 
+
         /// Scan page
         SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'How to scan',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 5, 102, 180),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  'Step 1:',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 9, 123, 216),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'This button and Page is showed only the first time, or when you press from menu the Tab Help!',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  'Step 2:',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 9, 123, 216),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'You will be dropped in a page with a picture frame. Give access to the app to use the phone’s camera and you’re Ready to go!',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  'Step 3:',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 9, 123, 216),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Take the picture, you can retake if the quality is blurry or cancel to return to the menu.',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  'Step 4:',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 9, 123, 216),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Wait for the result and see possible treatments or general information about the disease!',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const SizedBox(height: 30),
-                GestureDetector(
-                  onTap: () {
-                    // TODO: Uncomment the Scan Screen 
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => const ScanScreen()),
-                    // );
-                    if (kDebugMode) {
-                      print('Scan button tapped!');
-                    }
-                  },
-                  child: Container(
-                    color: const Color(0xFF2C3D8F),
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 12, horizontal: 20),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Make a new Scan',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 8.0),
-                          child: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.white,
-                            size: 30,
-                          ),
-                        ),
-                      ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'How to scan',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFF2C3D8F),
+                      ),
                     ),
+                    SizedBox(height: 16),
+                    Text(
+                      'Step 1:',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF2C3D8F),
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'This button and Page is showed only the first time, or when you press from menu the Tab Help!',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      'Step 2:',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF2C3D8F),
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'You will be dropped in a page with a picture frame. Give access to the app to use the phone’s camera and you’re Ready to go!',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      'Step 3:',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF2C3D8F),
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Take the picture, you can retake if the quality is blurry or cancel to return to the menu.',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      'Step 4:',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF2C3D8F),
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Wait for the result and see possible treatments or general information about the disease!',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(height: 23),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  // TODO: Uncomment the Scan Screen
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => const ScanScreen()),
+                  // );
+                  if (kDebugMode) {
+                    print('Scan button tapped!');
+                  }
+                },
+                child: Container(
+                  color: const Color(0xFF2C3D8F),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Make a new Scan',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 8.0),
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
+
 
         /// Profile page
         const SingleChildScrollView(
@@ -348,6 +367,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 26,
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF2C3D8F),
                     ),
@@ -357,6 +377,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 26,
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF2C3D8F),
                     ),
@@ -367,6 +388,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
+                      fontFamily: 'Inter',
                       color: Colors.black,
                     ),
                   ),
@@ -375,6 +397,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF2C3D8F),
                     ),
@@ -385,6 +408,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
+                      fontFamily: 'Inter',
                       color: Colors.black,
                     ),
                   ),
@@ -393,6 +417,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF2C3D8F),
                     ),
@@ -403,6 +428,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
+                      fontFamily: 'Inter',
                       color: Colors.black,
                     ),
                   ),
@@ -411,6 +437,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF2C3D8F),
                     ),

@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+// Created by Aristotelis Pallasidis
 import 'package:flutter/material.dart';
 
 class VerifyEmailScreen extends StatefulWidget {

@@ -40,7 +40,7 @@ class LogoPageContent extends StatelessWidget {
               style: TextStyle(
                 color: Color(0xFF2C3D8F),
                 fontWeight: FontWeight.bold,
-                fontSize: 77,
+                fontSize: 72,
               ),
             ),
 
@@ -50,7 +50,7 @@ class LogoPageContent extends StatelessWidget {
               style: TextStyle(
                 color: Color(0xFF2C3D8F),
                 fontWeight: FontWeight.bold,
-                fontSize: 27,
+                fontSize: 24,
               ),
               textAlign: TextAlign.center,
             ),
@@ -74,7 +74,7 @@ class LogoPageContent extends StatelessWidget {
                 'Tap to continue',
                 style: TextStyle(
                   color: Color(0xFF2C3D8F),
-                  fontSize: 20,
+                  fontSize: 18,
                   decoration: TextDecoration.none, // Remove underline
                 ),
               ),
