@@ -1,29 +1,9 @@
 import 'package:flutter/material.dart';
-
-//import 'package:main_menu/main_menu.dart';
-//import 'package:flutter/material.dart';
-//import 'package:main_menu/main_menu.dart';
-
-//Created by Georgios Koutalios
-//Added the icons at assets/images/main_menu_icons
-
-void main() {
-  runApp(const MenuApp());
-}
-
-class MenuApp extends StatelessWidget {
-  const MenuApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'iDerma Menu',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MenuScreen(),
-    );
-  }
-}
+import 'package:iderma/screens/about_emb_screen.dart';
+import 'package:iderma/screens/authentication/login_pages_screen.dart';
+import 'package:iderma/screens/home_screen.dart';
+import 'package:iderma/screens/how_the_model_works_screen.dart';
+import 'package:iderma/screens/terms_of_use_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -40,7 +20,10 @@ class MenuScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              // Handle close button tap
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomePageScreen()),
+              );
             },
             child: const Text('Close',
                 style: TextStyle(
@@ -65,6 +48,11 @@ class MenuScreen extends StatelessWidget {
                   text: 'Homepage',
                   icon: 'assets/images/main_menu_icons/home.png',
                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomePageScreen()),
+                    );
                     // Button payload
                   },
                 ),
@@ -73,6 +61,11 @@ class MenuScreen extends StatelessWidget {
                   text: 'FaQ',
                   icon: 'assets/images/main_menu_icons/faq.png',
                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HowTheModelWorksScreen()),
+                    );
                     // Button payload
                   },
                 ),
@@ -81,14 +74,24 @@ class MenuScreen extends StatelessWidget {
                   text: 'How the Model Works',
                   icon: 'assets/images/main_menu_icons/gear.png',
                   onTap: () {
-                    // Button payload
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HowTheModelWorksScreen()),
+                    );
                   },
                 ),
+
                 const SizedBox(height: 25), // Add spacing between buttons
                 MenuItem(
                   text: 'Terms Of Use',
                   icon: 'assets/images/main_menu_icons/terms_of_use.png',
                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TearmsOfUseScreen()),
+                    );
                     // Button payload
                   },
                 ),
@@ -105,30 +108,29 @@ class MenuScreen extends StatelessWidget {
                   text: 'About EMB',
                   icon: 'assets/images/main_menu_icons/about.png',
                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AboutEmbScreen()),
+                    );
+                    // Button payload
+                  },
+                ),
+                const SizedBox(height: 3),
+                MenuItem(
+                  text: 'Logout',
+                  icon: 'assets/images/main_menu_icons/logout.png',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPagesScreen()),
+                    );
                     // Button payload
                   },
                 ),
               ],
             ),
-          ),
-        ),
-      ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Align(
-          alignment: Alignment.bottomLeft,
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  // Button payload
-                },
-                icon: const Icon(Icons.logout, color: Colors.white, size: 30),
-              ),
-              const SizedBox(width: 8),
-              const Text('Logout',
-                  style: TextStyle(color: Colors.white, fontSize: 20)),
-            ],
           ),
         ),
       ),

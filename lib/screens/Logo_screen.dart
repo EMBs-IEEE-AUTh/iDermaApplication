@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okeyy/services/auth_services.dart';
+import 'package:iderma/screens/authentication/auth_service_screen.dart';
 
 //-------------------Ιωάννα-------------------------------
 
@@ -13,7 +13,7 @@ class LogoPageContent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'lib/images/logo.png',
+              'assets/images/logos/logo.png',
               width: 150,
             ),
             SizedBox(height: 20),
@@ -37,7 +37,7 @@ class LogoPageContent extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Image.asset(
-              'lib/images/details.png',
+              'assets/images/introduction/details.png',
               width: 250,
             ),
             SizedBox(height: 40), // Adjust the height as needed
@@ -46,7 +46,7 @@ class LogoPageContent extends StatelessWidget {
                 // Navigate to the SignUp page
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AuthPage()),
+                  MaterialPageRoute(builder: (context) => const AuthPage()),
                 );
               },
               child: const Text(

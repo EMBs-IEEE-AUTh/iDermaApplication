@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:iderma/screens/introduction_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:iderma/firebase_options.dart';
+import 'package:iderma/screens/Logo_screen.dart';
 
-void main() {
-  runApp(const IDermaApplication());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const MyApp());
 }
 
-class IDermaApplication extends StatelessWidget {
-  const IDermaApplication({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home:IntroductionScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LogoPageContent(),
     );
   }
 }

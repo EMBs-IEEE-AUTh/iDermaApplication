@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:okeyy/screens/home_page_screen.dart';
-import 'package:okeyy/screens/login_or_register_screen.dart';
+import 'package:iderma/screens/authentication/login_or_register_screen.dart';
+import 'package:iderma/screens/home_screen.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -14,7 +14,7 @@ class AuthPage extends StatelessWidget {
       builder: (context, snapshot) {
         //user logged in
         if (snapshot.hasData) {
-          return HomePageScreen();
+          return const HomePageScreen();
         }
 
         //user not logged in

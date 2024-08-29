@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "918664536326",
+    "project_id": "iderma-20879",
+    "storage_bucket": "iderma-20879.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918664536326:android:14b34ce2995789ccc47e87",
+        "android_client_info": {
+          "package_name": "com.example.iderma"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpiv13z1gOrKb2wILKVCLp3lePCs3mh58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

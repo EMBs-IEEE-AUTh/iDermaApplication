@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okeyy/screens/login_pages_screen.dart';
-import 'package:okeyy/screens/login_screen.dart';
-import 'package:okeyy/screens/login_screen1.dart';
-import 'package:okeyy/screens/register_screen.dart';
+import 'package:iderma/screens/authentication/login_pages_screen.dart';
 
 class LoginOrRegisterPage extends StatefulWidget {
   const LoginOrRegisterPage({super.key});
@@ -13,7 +10,7 @@ class LoginOrRegisterPage extends StatefulWidget {
 
 class _LoginOrRegisterPageState extends State<LoginOrRegisterPage> {
   //initially show login page
-  bool showLOginPage = true;
+  bool showLOginPage = false;
 
   //toggle between login and register page
   void togglePages() {
@@ -29,7 +26,7 @@ class _LoginOrRegisterPageState extends State<LoginOrRegisterPage> {
         onTap: togglePages,
       );
     } else {
-      return RegisterScreen(
+      return LoginPagesScreen(
         onTap: togglePages,
       );
     }

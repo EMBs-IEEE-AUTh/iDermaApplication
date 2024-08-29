@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:iDermaApplication/components/account_created.dart';
-import 'package:okeyy/components/account_created.dart';
-import 'package:okeyy/components/custom_button.dart';
-import 'package:okeyy/components/my_button.dart';
-import 'package:okeyy/components/square_tile.dart';
-import 'package:okeyy/screens/home_page_screen.dart';
-import 'package:okeyy/services/auth_service.dart'; // Import the new page
+import 'package:iderma/components/button_create_account.dart';
+import 'package:iderma/components/my_button.dart';
+import 'package:iderma/components/my_square_tile.dart';
+import 'package:iderma/screens/authentication/auth/auth_service.dart';
+import 'package:iderma/screens/home_screen.dart';
+// Import the new page
 
 class SignUp extends StatefulWidget {
   @override
@@ -78,7 +77,7 @@ class _SignUpState extends State<SignUp> {
     if (isFormValid) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => AccountCreatedPage()),
+        MaterialPageRoute(builder: (context) => HomePageScreen()),
       );
     }
   }
@@ -120,14 +119,17 @@ class _SignUpState extends State<SignUp> {
       } else {
         // Show error message if passwords don't match
         showErrorMessage("Passwords don't match");
+        Navigator.pop(context);
       }
     } on FirebaseAuthException catch (e) {
       // Handle errors
       Navigator.pop(context); // Close the loading spinner
       if (e.code == 'email-already-in-use') {
         showErrorMessage("This email is already in use.");
+        Navigator.pop(context);
       } else if (e.code == 'weak-password') {
         showErrorMessage("Your password is too weak.");
+        Navigator.pop(context);
       } else {
         showErrorMessage("Something went wrong. Please try again.");
       }
@@ -299,19 +301,21 @@ class _SignUpState extends State<SignUp> {
                 children: [
                   //google button
                   SquareTile(
-                      imagePath: 'lib/images/google.png',
-                      buttonText: 'Sign In with google',
-                      onTap: () => AuthService().signInWithGoogle(),
-                      width: 300.00),
+                    onTap: () => AuthService().signInWithGoogle(),
+                    imagePath: 'assets/images/logos/google.png',
+                    buttonText: 'Google Sing In',
+                  ),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(
+                    height: 20,
+                  ),
 
                   //apple button
                   SquareTile(
-                      imagePath: 'lib/images/apple.png',
-                      buttonText: 'Sign In with Apple ID',
-                      onTap: () => AuthService().signInWithGoogle(),
-                      width: 300.00)
+                    onTap: () => AuthService().signInWithGoogle(),
+                    imagePath: 'assets/images/logos/apple.png',
+                    buttonText: 'Apple Id Sign In',
+                  )
                 ],
               ),
               SizedBox(height: 50),
