@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>918664536326-v4is5llhjdoo2nj57nrscrmn6gh5jna6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.918664536326-v4is5llhjdoo2nj57nrscrmn6gh5jna6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC6dDasq76QGW1JN3PsJmoDCvV-Y6NKiHQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>918664536326</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.iderma</string>
+	<key>PROJECT_ID</key>
+	<string>iderma-20879</string>
+	<key>STORAGE_BUCKET</key>
+	<string>iderma-20879.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:918664536326:ios:573d5d96339d6c56c47e87</string>
+</dict>
+</plist>
