@@ -35,6 +35,7 @@ class _SignUpState extends State<SignUp> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  OverlayEntry? _overlayEntry;
 
 //---------------------------------------------------ACTION_LISTENERS----------------------------------------------------------
 
@@ -82,6 +83,27 @@ class _SignUpState extends State<SignUp> {
     }
   }
 
+//---------------------------------------------------Loading_Overlay------------------------------------------------------------------
+
+  void showLoadingOverlay() {
+    _overlayEntry = OverlayEntry(
+      builder: (context) => Positioned.fill(
+        child: Material(
+          color: Colors.black.withOpacity(0.5),
+          child: Center(
+            child: CircularProgressIndicator(),
+          ),
+        ),
+      ),
+    );
+    Overlay.of(context).insert(_overlayEntry!);
+  }
+
+  void hideLoadingOverlay() {
+    _overlayEntry?.remove();
+    _overlayEntry = null;
+  }
+
   //------------------------------------------------Show_Error_Message------------------------------------------------------------
   void showErrorMessage(String message) {
     showDialog(
@@ -96,13 +118,15 @@ class _SignUpState extends State<SignUp> {
   //------------------------------------------------Sign_User_Up------------------------------------------------------------------
   void signUserUp() async {
     // Show loading circle
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) {
-        return const Center(child: CircularProgressIndicator());
-      },
-    );
+    // showDialog(
+    //   context: context,
+    //   barrierDismissible: false,
+    //   builder: (context) {
+    //     return const Center(child: CircularProgressIndicator());
+    //   },
+    // );
+
+    showLoadingOverlay();
 
     try {
       // Check if password and confirm password are the same
@@ -117,19 +141,24 @@ class _SignUpState extends State<SignUp> {
           MaterialPageRoute(builder: (context) => HomePageScreen()),
         );
       } else {
+        // Navigator.pop(context);
         // Show error message if passwords don't match
         showErrorMessage("Passwords don't match");
-        Navigator.pop(context);
+        // Navigator.pop(context);
+
+        // Navigate to Home Screen
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => SignUp()));
       }
     } on FirebaseAuthException catch (e) {
       // Handle errors
-      Navigator.pop(context); // Close the loading spinner
+      // Navigator.pop(context); // Close the loading spinner
       if (e.code == 'email-already-in-use') {
         showErrorMessage("This email is already in use.");
-        Navigator.pop(context);
+        // Navigator.pop(context);
       } else if (e.code == 'weak-password') {
         showErrorMessage("Your password is too weak.");
-        Navigator.pop(context);
+        // Navigator.pop(context);
       } else {
         showErrorMessage("Something went wrong. Please try again.");
       }
@@ -137,6 +166,8 @@ class _SignUpState extends State<SignUp> {
       Navigator.pop(
           context); // Close the loading spinner in case of unexpected errors
       showErrorMessage("An unexpected error occurred.");
+    } finally {
+      hideLoadingOverlay();
     }
   }
 

@@ -73,6 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
         showAlert('Incorrect Email');
       } else if (e.code == 'wrong-password') {
         showAlert('Incorrect Password');
+        hideLoadingOverlay();
       } else {
         showAlert('An error occurred. Please try again.');
       }
@@ -133,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(height: 10),
                     TextField(
                       controller: emailController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Email',
                         hintStyle:
                             TextStyle(color: Color.fromARGB(255, 99, 99, 99)),
@@ -161,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextField(
                       controller: passwordController,
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Password',
                         hintStyle:
                             TextStyle(color: Color.fromARGB(255, 99, 99, 99)),
