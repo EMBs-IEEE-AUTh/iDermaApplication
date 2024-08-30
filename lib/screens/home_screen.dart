@@ -379,11 +379,10 @@ class _NavigationExampleState extends State<NavigationExample> {
         /// Profile page
         const SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(0.0), // Remove padding
+            padding: EdgeInsets.all(40),
             child: Center(
+              // Wrap the Column with Center widget
               child: Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment.stretch, // Ensure full width
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircleAvatar(
