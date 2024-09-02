@@ -1,6 +1,5 @@
 // Created by Aristotelis Pallasidis
 import 'package:flutter/material.dart';
-import 'package:iderma/screens/home_screen.dart';
 import 'package:iderma/screens/main_menu.dart';
 
 class TopNavigationAppBar extends StatelessWidget

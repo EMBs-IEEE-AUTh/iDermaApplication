@@ -1,7 +1,7 @@
 name: iderma
-description:   "iDerma is a revolutionary mobile application that harnesses the power of artificial intelligence (AI) and the camera on your phone to identify a wide range of human skin diseases, identify a wide range of skin diseases."
+description: "iDerma is a revolutionary mobile application that harnesses the power of artificial intelligence (AI) and the camera on your phone to identify a wide range of human skin diseases, identify a wide range of skin diseases."
 publish_to: 'none'
-version: 1.1.6
+version: 1.2.1
 
 
 # ---------------------------
@@ -20,14 +20,20 @@ dependencies:
 
   url_launcher: ^6.0.20
 
-  # Firebase
-
   # Camera
+  image_picker: ^1.1.2
+
+  # HTTP 
+  http: ^1.2.2
 
   # CupertinoIcons for iOS style icons
   cupertino_icons: ^1.0.6 
+  
+  # Firebase
   firebase_core: ^3.4.0
   firebase_auth: ^5.1.3
+  
+  # Google Sign In 
   google_sign_in_ios: ^5.7.6
   google_sign_in: ^6.2.1
 
@@ -70,7 +76,6 @@ flutter:
           weight: 800
         - asset: assets/fonts/Inter-Black.ttf
           weight: 900
-
 
     - family: Poppins
       fonts:
