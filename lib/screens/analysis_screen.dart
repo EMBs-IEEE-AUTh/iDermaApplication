@@ -22,7 +22,7 @@ class AnalysisScreen extends StatelessWidget {
                   color: Color.fromRGBO(44, 61, 143, 1),
                   fontSize: 36.0,
                   fontWeight: FontWeight.w500,
-                  fontFamily: 'Poppins',
+                  fontFamily: 'Inter',
                 ),
                 textAlign: TextAlign.left,
               ),
@@ -40,7 +40,7 @@ class AnalysisScreen extends StatelessWidget {
                 'Please',
                 style: TextStyle(
                   color: Color.fromRGBO(44, 61, 143, 1),
-                  fontFamily: 'Poppins',
+                  fontFamily: 'Inter',
                   fontSize: 26.0,
                 ),
                 textAlign: TextAlign.center,
@@ -50,7 +50,7 @@ class AnalysisScreen extends StatelessWidget {
                 'Wait for the results',
                 style: TextStyle(
                   color: Color.fromRGBO(44, 61, 143, 1),
-                  fontFamily: 'Poppins',
+                  fontFamily: 'Inter',
                   fontWeight: FontWeight.w800,
                   fontSize: 26,
                 ),
@@ -65,7 +65,7 @@ class AnalysisScreen extends StatelessWidget {
                     'Fun Facts',
                     style: TextStyle(
                       color: Color.fromRGBO(44, 61, 143, 1),
-                      fontFamily: 'Poppins',
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
                     ),
@@ -78,7 +78,7 @@ class AnalysisScreen extends StatelessWidget {
                   'Our heart beats around 100,000 times every day or about 30 million times in a year.',
                   style: TextStyle(
                     color: Color.fromRGBO(44, 61, 143, 1),
-                    fontFamily: 'Poppins',
+                    fontFamily: 'Inter',
                     fontSize: 16,
                   ),
                   textAlign: TextAlign.left,
@@ -86,10 +86,10 @@ class AnalysisScreen extends StatelessWidget {
               ),
               const SizedBox(height: 180),
               const Text(
-                'They are Ready!!!',
+                'Your results are ready!',
                 style: TextStyle(
                   color: Color.fromRGBO(44, 61, 143, 1),
-                  fontFamily: 'Poppins',
+                  fontFamily: 'Inter',
                   fontWeight: FontWeight.w800,
                   fontSize: 27,
                 ),
@@ -116,7 +116,7 @@ class AnalysisScreen extends StatelessWidget {
                         'Continue',
                         style: TextStyle(
                           color: Colors.white,
-                          fontFamily: 'Poppins',
+                          fontFamily: 'Inter',
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
                         ),
@@ -125,7 +125,7 @@ class AnalysisScreen extends StatelessWidget {
                         '>>>>>>>>',
                         style: TextStyle(
                           color: Colors.white,
-                          fontFamily: 'Poppins',
+                          fontFamily: 'Inter',
                           fontSize: 24,
                         ),
                       ),

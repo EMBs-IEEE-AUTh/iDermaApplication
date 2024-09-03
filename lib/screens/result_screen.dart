@@ -44,7 +44,7 @@ class ResultScreen extends StatelessWidget {
                     'Back',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Poppins',
+                      fontFamily: 'Inter',
                       color: Color.fromRGBO(44, 61, 143, 1),
                     ),
                   ),
@@ -62,7 +62,7 @@ class ResultScreen extends StatelessWidget {
             child: Text(
               'Results',
               style: TextStyle(
-                fontFamily: 'Poppins',
+                fontFamily: 'Inter',
                 fontSize: 20,
                 fontWeight: FontWeight.w800,
                 color: Color.fromRGBO(44, 61, 143, 1),
@@ -90,7 +90,7 @@ class ResultScreen extends StatelessWidget {
               "Dyshidrotic eczema treatment",
               style: TextStyle(
                 color: Color.fromRGBO(44, 61, 143, 1),
-                fontFamily: 'Poppins',
+                fontFamily: 'Inter',
                 fontSize: 20,
               ),
             ),
@@ -102,7 +102,7 @@ class ResultScreen extends StatelessWidget {
               "Treatment:",
               style: TextStyle(
                 color: Color.fromRGBO(44, 61, 143, 1),
-                fontFamily: 'Poppins',
+                fontFamily: 'Inter',
                 fontSize: 20,
                 fontWeight: FontWeight.w800,
               ),
@@ -114,7 +114,7 @@ class ResultScreen extends StatelessWidget {
               '''Moisturizing lotion or cream. This helps\ntreat dry skin.\nSteroid ointment. This can reduce\ninflammation.\nCalcineurin creams.\nSteroid medicines taken by mouth (oral).\nDraining of very large blisters.\nTreatment with psoralen and ultraviolet\nlight (PUVA).\nOther medicines.''',
               style: TextStyle(
                 color: Color.fromRGBO(44, 61, 143, 1),
-                fontFamily: 'Poppins',
+                fontFamily: 'Inter',
                 fontSize: 16,
               ),
             ),
@@ -136,11 +136,11 @@ class ResultScreen extends StatelessWidget {
             child: Container(
               color: Color.fromRGBO(44, 61, 143, 1),
               padding: EdgeInsets.symmetric(vertical: 20),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 25),
+                    padding: EdgeInsets.only(left: 25),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -149,7 +149,7 @@ class ResultScreen extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -159,7 +159,7 @@ class ResultScreen extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             decoration: TextDecoration.underline,
                             decorationColor: Colors.white,
                             fontWeight: FontWeight.w500,
@@ -169,10 +169,13 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 20),
+                    padding: EdgeInsets.only(right: 20),
                     child: Text(
                       '>>>>>>>>',
-                      style: TextStyle(fontSize: 24, color: Colors.white),
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontFamily: 'Inter',
+                          color: Colors.white),
                     ),
                   ),
                 ],

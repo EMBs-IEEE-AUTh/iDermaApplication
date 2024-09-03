@@ -192,8 +192,7 @@ class DoctorProfile extends StatelessWidget {
                                   height: 20.0,
                                   decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: Color.fromARGB(
-                                        255, 249, 249, 249),
+                                    color: Color.fromARGB(255, 249, 249, 249),
                                   ),
                                   child: const Icon(
                                     Icons.person,
@@ -245,7 +244,8 @@ class DoctorProfile extends StatelessWidget {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(25),
-                                    color: const Color.fromARGB(255, 255, 255, 255),
+                                    color: const Color.fromARGB(
+                                        255, 255, 255, 255),
                                     boxShadow: const [
                                       BoxShadow(
                                         color: Color(0x29000000),
@@ -295,7 +295,7 @@ class DoctorProfile extends StatelessWidget {
                         style: TextStyle(
                           color: Color(0xFF2C3D8F),
                           fontSize: 18,
-                          fontFamily: 'Poppins',
+                          fontFamily: 'Inter',
                           fontWeight: FontWeight.w900,
                           height: 0,
                         ),
@@ -332,7 +332,7 @@ class DoctorProfile extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xFF2C3D8F),
                       fontSize: 12,
-                      fontFamily: 'Poppins',
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                       height: 0,
                     ),
@@ -353,7 +353,7 @@ class DoctorProfile extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFF2C3D8F),
                             fontSize: 12,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w700,
                             height: 0,
                           ),
@@ -363,7 +363,7 @@ class DoctorProfile extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFF2C3D8F),
                             fontSize: 12,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,
                             height: 0,
                           ),
@@ -394,7 +394,7 @@ class DoctorProfile extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFF2C3D8F),
                             fontSize: 12,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w600,
                             height: 0,
                           ),
@@ -418,7 +418,7 @@ class DoctorProfile extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFF2C3D8F),
                             fontSize: 12,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,
                             height: 0,
                           ),
@@ -442,7 +442,7 @@ class DoctorProfile extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFF2C3D8F),
                             fontSize: 12,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,
                             height: 0,
                           ),
@@ -466,7 +466,7 @@ class DoctorProfile extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFF2C3D8F),
                             fontSize: 12,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,
                             height: 0,
                           ),
@@ -490,7 +490,7 @@ class DoctorProfile extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFF2C3D8F),
                             fontSize: 12,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,
                             height: 0,
                           ),
@@ -511,7 +511,7 @@ class DoctorProfile extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xFF2C3D8F),
                       fontSize: 12,
-                      fontFamily: 'Poppins',
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                       height: 0,
                     ),
@@ -532,7 +532,7 @@ class DoctorProfile extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFF2C3D8F),
                             fontSize: 12,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,
                             height: 0,
                           ),
@@ -571,7 +571,7 @@ class DoctorProfile extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 15.5,
-                              fontFamily: 'Poppins',
+                              fontFamily: 'Inter',
                               fontWeight: FontWeight.w600,
                               height: 0,
                             ),
@@ -593,7 +593,7 @@ class DoctorProfile extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xFF2C3D8F),
                       fontSize: 12,
-                      fontFamily: 'Poppins',
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       height: 0,
                     ),
@@ -611,7 +611,7 @@ class DoctorProfile extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xFF2C3D8F),
                       fontSize: 12,
-                      fontFamily: 'Poppins',
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       height: 0,
                     ),
@@ -644,7 +644,7 @@ class DoctorProfile extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 36,
-                      fontFamily: 'Poppins',
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       height: 0,
                     ),
