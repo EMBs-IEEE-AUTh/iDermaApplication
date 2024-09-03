@@ -432,46 +432,6 @@ class _NavigationExampleState extends State<NavigationExample> {
                       color: Color(0xFF2C3D8F),
                     ),
                   ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Date of Birth', // Replace with actual date of birth
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Inter',
-                      color: Colors.black,
-                    ),
-                  ),
-                  Text(
-                    'October 30, 2000', // Replace with actual date of birth
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2C3D8F),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Latest scan', // Replace with actual date of birth
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Inter',
-                      color: Colors.black,
-                    ),
-                  ),
-                  Text(
-                    'April 24, 2024', // Replace with actual date of birth
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2C3D8F),
-                    ),
-                  ),
                 ],
               ),
             ),

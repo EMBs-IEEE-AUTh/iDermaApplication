@@ -25,6 +25,7 @@ class TopNavigationAppBar extends StatelessWidget
             ),
             IconButton(
               icon: const Icon(Icons.menu),
+              color: const Color(0xFF2C3D8F),
               onPressed: () {
                 Navigator.push(
                   context,
