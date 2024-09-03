@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:iderma/components/top_navigation_bar.dart';
 import 'package:iderma/screens/analysis_screen.dart';
@@ -40,7 +41,7 @@ class _CameraScreenState extends State<CameraScreen> {
       home: Scaffold(
         appBar: const TopNavigationAppBar(),
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -58,23 +59,25 @@ class _CameraScreenState extends State<CameraScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   TextButton(
-                    onPressed: _pickImageFromGallery,
+                    onPressed: _pickImageFromCamera,
                     child: const Text(
-                      "Image Gallery",
+                      "Camera",
                       style: TextStyle(
-                        color: Colors.blue, // Set text color to blue
-                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF2C3D8F),
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
                         fontSize: 16,
                       ),
                     ),
                   ),
                   TextButton(
-                    onPressed: _pickImageFromCamera,
+                    onPressed: _pickImageFromGallery,
                     child: const Text(
-                      "Camera",
+                      "Image Gallery",
                       style: TextStyle(
-                        color: Colors.red, // Set text color to red
-                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF2C3D8F),
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
                         fontSize: 16,
                       ),
                     ),
@@ -82,44 +85,47 @@ class _CameraScreenState extends State<CameraScreen> {
                 ],
               ),
               const SizedBox(height: 20),
+              // TODO: Upload image to Firebase Storage
               GestureDetector(
-                onTap: _selectedImage != null
-                    ? () {
-                        // TODO: Upload image to Firebase Storage
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const AnalysisScreen(),
-                          ),
-                        );
-                      }
-                    : null,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CameraScreen(),
+                    ),
+                  );
+                  if (kDebugMode) {
+                    print('Scan button tapped!');
+                  }
+                },
                 child: Container(
                   color: _selectedImage != null
                       ? const Color.fromRGBO(44, 61, 143, 1)
                       : Colors.grey,
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 0,
-                    vertical: 20,
-                  ),
+                    vertical: 12,
+                    horizontal: 20,
+                  ), // Keep only one padding property
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Continue',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Inter',
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
+                      Expanded(
+                        child: Text(
+                          'Continue',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
-                      Text(
-                        '>>>>>>>>',
-                        style: TextStyle(
+                      Padding(
+                        padding: EdgeInsets.only(left: 8.0),
+                        child: Icon(
+                          Icons.arrow_forward_ios_rounded,
                           color: Colors.white,
-                          fontFamily: 'Inter',
-                          fontSize: 24,
+                          size: 30,
                         ),
                       ),
                     ],

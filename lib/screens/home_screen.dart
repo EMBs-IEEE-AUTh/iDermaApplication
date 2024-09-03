@@ -332,7 +332,6 @@ class _NavigationExampleState extends State<NavigationExample> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    // TODO: Uncomment the Scan Screen
                     Navigator.push(
                       context,
                       MaterialPageRoute(
