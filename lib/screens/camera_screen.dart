@@ -39,85 +39,94 @@ class _CameraScreenState extends State<CameraScreen> {
     return MaterialApp(
       home: Scaffold(
         appBar: const TopNavigationAppBar(),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 20),
-                _selectedImage != null
-                    ? Image.file(_selectedImage!)
-                    : const Text("Please select or capture an image"),
-                TextButton(
-                  onPressed: _pickImageFromGallery,
-                  child: const Text(
-                    "Image Gallery",
-                    style: TextStyle(
-                      color: Colors.blue, // Set text color to blue
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 20),
+              _selectedImage != null
+                  ? Expanded(
+                      child: Image.file(_selectedImage!),
+                    )
+                  : const Expanded(
+                      child: Center(
+                        child: Text("Please select or capture an image"),
+                      ),
+                    ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TextButton(
+                    onPressed: _pickImageFromGallery,
+                    child: const Text(
+                      "Image Gallery",
+                      style: TextStyle(
+                        color: Colors.blue, // Set text color to blue
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
-                ),
-                TextButton(
-                  onPressed: _pickImageFromCamera,
-                  child: const Text(
-                    "Camera",
-                    style: TextStyle(
-                      color: Colors.red, // Set text color to red
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                  TextButton(
+                    onPressed: _pickImageFromCamera,
+                    child: const Text(
+                      "Camera",
+                      style: TextStyle(
+                        color: Colors.red, // Set text color to red
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
-                ),
-                const Spacer(),
-                GestureDetector(
-                  onTap: _selectedImage != null
-                      ? () {
-                          // TODO: Upload image to Firebase Storage
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const AnalysisScreen(),
-                            ),
-                          );
-                        }
-                      : null,
-                  child: Container(
-                    color: _selectedImage != null
-                        ? const Color.fromRGBO(44, 61, 143, 1)
-                        : Colors.grey,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 0,
-                      vertical: 20,
-                    ),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Continue',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Inter',
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
+                ],
+              ),
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: _selectedImage != null
+                    ? () {
+                        // TODO: Upload image to Firebase Storage
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AnalysisScreen(),
                           ),
+                        );
+                      }
+                    : null,
+                child: Container(
+                  color: _selectedImage != null
+                      ? const Color.fromRGBO(44, 61, 143, 1)
+                      : Colors.grey,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 0,
+                    vertical: 20,
+                  ),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Continue',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Inter',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
                         ),
-                        Text(
-                          '>>>>>>>>',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Inter',
-                            fontSize: 24,
-                          ),
+                      ),
+                      Text(
+                        '>>>>>>>>',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Inter',
+                          fontSize: 24,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
