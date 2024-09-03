@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:iderma/screens/result_screen.dart';
 // Make sure to import your new screen
 
-class AnalizeScreen extends StatelessWidget {
-  const AnalizeScreen({super.key});
+class AnalysisScreen extends StatelessWidget {
+  const AnalysisScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +12,11 @@ class AnalizeScreen extends StatelessWidget {
       body: Stack(
         children: [
           // Align the title to the top-left
-          Align(
+          const Align(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: const EdgeInsets.all(16.0), // Adjust padding as needed
-              child: const Text(
+              padding: EdgeInsets.all(16.0), // Adjust padding as needed
+              child: Text(
                 'iDerma',
                 style: TextStyle(
                   color: Color.fromRGBO(44, 61, 143, 1),
@@ -33,10 +33,10 @@ class AnalizeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                   height:
                       150), // Adjust height to account for the title's position
-              Text(
+              const Text(
                 'Please',
                 style: TextStyle(
                   color: Color.fromRGBO(44, 61, 143, 1),
@@ -45,8 +45,8 @@ class AnalizeScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Wait for the results',
                 style: TextStyle(
                   color: Color.fromRGBO(44, 61, 143, 1),
@@ -56,9 +56,9 @@ class AnalizeScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 100),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+              const SizedBox(height: 100),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -72,8 +72,8 @@ class AnalizeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   'Our heart beats around 100,000 times every day or about 30 million times in a year.',
                   style: TextStyle(
@@ -84,8 +84,8 @@ class AnalizeScreen extends StatelessWidget {
                   textAlign: TextAlign.left,
                 ),
               ),
-              SizedBox(height: 180),
-              Text(
+              const SizedBox(height: 180),
+              const Text(
                 'They are Ready!!!',
                 style: TextStyle(
                   color: Color.fromRGBO(44, 61, 143, 1),
@@ -95,20 +95,21 @@ class AnalizeScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              Spacer(),
+              const Spacer(),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            ResultScreen()), // Navigate to the new screen
+                            const ResultScreen()), // Navigate to the new screen
                   );
                 },
                 child: Container(
-                  color: Color.fromRGBO(44, 61, 143, 1),
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  child: Row(
+                  color: const Color.fromRGBO(44, 61, 143, 1),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(

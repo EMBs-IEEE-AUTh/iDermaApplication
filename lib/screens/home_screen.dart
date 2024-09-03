@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:iderma/components/top_navigation_bar.dart';
-import 'package:iderma/screens/analize_screens.dart';
+import 'package:iderma/screens/analysis_screen.dart';
 
 class HomePageScreen extends StatelessWidget {
   const HomePageScreen({super.key});
@@ -335,7 +335,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const AnalizeScreen()),
+                          builder: (context) => const AnalysisScreen()),
                     );
                     if (kDebugMode) {
                       print('Scan button tapped!');
