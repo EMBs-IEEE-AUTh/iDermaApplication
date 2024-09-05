@@ -5,6 +5,7 @@ import 'package:iderma/components/my_button.dart';
 import 'package:iderma/components/my_square_tile.dart';
 import 'package:iderma/screens/authentication/auth/auth_service.dart';
 import 'package:iderma/screens/home_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 // Import the new page
 
 class SignUp extends StatefulWidget {
@@ -138,7 +139,7 @@ class _SignUpState extends State<SignUp> {
         // Navigate to Home Screen
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePageScreen()),
+          MaterialPageRoute(builder: (context) => const HomePageScreen()),
         );
       } else {
         // Navigator.pop(context);
@@ -182,7 +183,7 @@ class _SignUpState extends State<SignUp> {
             children: [
               buildInitialBox(),
               SizedBox(height: 40),
-              Text(
+              const Text(
                 'Sign Up',
                 style: TextStyle(
                   fontSize: 34,
@@ -190,7 +191,7 @@ class _SignUpState extends State<SignUp> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Column(
                 crossAxisAlignment: CrossAxisAlignment
                     .start, // Aligns text and text box to the left
@@ -317,7 +318,27 @@ class _SignUpState extends State<SignUp> {
                 ],
               ),
               SizedBox(height: 10),
-              MyButton(onTap: signUserUp, text: 'Sign Up'),
+              CustomButton(
+                buttonText: 'Create Account',
+                isFormValid:
+                    isFormValid, // Boolean to check if the form is valid
+                createAccountButtonColor:
+                    Color.fromRGBO(44, 61, 143, 1.0), // Your button color
+                onTap: () {
+                  signUserUp();
+                  CollectionReference collRef =
+                      FirebaseFirestore.instance.collection('client');
+                  collRef.add({
+                    'Name': _firstNameController.text,
+                    'Surname': _lastNameController.text,
+                    'Email': _emailController.text,
+                  }).then((value) {
+                    print("User Added");
+                  }).catchError((error) {
+                    print("Failed to add user: $error");
+                  });
+                },
+              ),
               SizedBox(height: 8),
               Text(
                 'or',
@@ -444,16 +465,23 @@ class _SignUpState extends State<SignUp> {
         }
       },
       child: CustomButton(
-        buttonText: 'Create Account',
+        buttonText: '',
+        isFormValid: isFormValid, // Boolean to check if the form is valid
+        createAccountButtonColor:
+            Color.fromRGBO(44, 61, 143, 1.0), // Your button color
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => HomePageScreen()),
-          );
-          // Define your button action here
+          CollectionReference collRef =
+              FirebaseFirestore.instance.collection('client');
+          collRef.add({
+            'Name': _firstNameController.text,
+            'Surname': _lastNameController.text,
+            'Email': _emailController.text,
+          }).then((value) {
+            print("User Added");
+          }).catchError((error) {
+            print("Failed to add user: $error");
+          });
         },
-        isFormValid: true, // or false depending on form validation
-        createAccountButtonColor: Color(0xFF2C3D8F), // Active button color
       ),
     );
   }

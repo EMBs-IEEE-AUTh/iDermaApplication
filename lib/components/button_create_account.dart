@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonText;
@@ -20,23 +21,21 @@ class CustomButton extends StatelessWidget {
       width: 300,
       height: 60,
       child: ElevatedButton(
-        onPressed: onTap,
+        onPressed: isFormValid ? onTap : null,
         style: ElevatedButton.styleFrom(
           backgroundColor: isFormValid ? createAccountButtonColor : Colors.grey,
           foregroundColor: Colors.white,
           textStyle: const TextStyle(
-            fontSize: 15, // Adjusted to match original Text style
+            fontSize: 15,
             fontWeight: FontWeight.normal,
           ),
           elevation: 0,
-          padding: EdgeInsets.zero, // Ensure padding doesn't alter the size
+          padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
-            borderRadius:
-                BorderRadius.circular(50), // Match Container border radius
+            borderRadius: BorderRadius.circular(50),
             side: BorderSide(
-              color: isFormValid
-                  ? createAccountButtonColor
-                  : Colors.transparent, // Keep border color logic
+              color:
+                  isFormValid ? createAccountButtonColor : Colors.transparent,
             ),
           ),
         ),
