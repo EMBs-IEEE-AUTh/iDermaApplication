@@ -85,51 +85,54 @@ class _CameraScreenState extends State<CameraScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              // TODO: Upload image to Firebase Storage
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const CameraScreen(),
-                    ),
-                  );
-                  if (kDebugMode) {
-                    print('Scan button tapped!');
-                  }
-                },
-                child: Container(
-                  color: _selectedImage != null
-                      ? const Color.fromRGBO(44, 61, 143, 1)
-                      : Colors.grey,
+              // Button to navigate to the AnalysisScreen
+              ElevatedButton(
+                onPressed: _selectedImage != null
+                    ? () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AnalysisScreen(),
+                          ),
+                        );
+                        if (kDebugMode) {
+                          print('Continue button pressed!');
+                        }
+                      }
+                    : null,
+                style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                     vertical: 12,
                     horizontal: 20,
-                  ), // Keep only one padding property
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          'Continue',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                      ),
-                    ],
                   ),
+                  backgroundColor: const Color.fromRGBO(44, 61, 143, 1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero, // Square corners
+                  ),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Continue',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

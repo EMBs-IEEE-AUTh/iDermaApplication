@@ -17,6 +17,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    
+  flutter_native_splash: ^2.4.1
 
   url_launcher: ^6.0.20
 
@@ -36,6 +38,10 @@ dependencies:
   # Google Sign In 
   google_sign_in_ios: ^5.7.6
   google_sign_in: ^6.2.1
+
+
+
+
 
 
 # ---------------------------
@@ -113,5 +119,7 @@ flutter:
     - assets/images/main_menu_icons/privacy_policy.png
     - assets/images/main_menu_icons/about.png
     - assets/images/main_menu_icons/logout.png
+    - assets/images/logos/logo_copy.png
+    - assets/images/logos/branding.png
 
   uses-material-design: true

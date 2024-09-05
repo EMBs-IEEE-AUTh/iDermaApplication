@@ -24,7 +24,8 @@ class AboutEmbScreen extends StatelessWidget {
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Inter',
-                        color: Color(0xFF2C3D8F), // Set text color using Color class
+                        color: Color(
+                            0xFF2C3D8F), // Set text color using Color class
                       ),
                     ),
                     Image.asset(
@@ -71,31 +72,36 @@ class AboutEmbScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5),
-                const Text('Nikolaos Trifon Papadopoulos',
+                const Text(
+                  'Nikolaos Trifon Papadopoulos',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Inter',
                   ),
                 ),
-                const Text('Despoina Nteli',
+                const Text(
+                  'Despoina Nteli',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Inter',
                   ),
                 ),
-                const Text('Maria Nteli',
+                const Text(
+                  'Maria Nteli',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Inter',
                   ),
                 ),
-                const Text('Georgios Koutalios',
+                const Text(
+                  'Georgios Koutalios',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Inter',
                   ),
                 ),
-                const Text('Andreas Segani',
+                const Text(
+                  'Andreas Segani',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Inter',
@@ -111,44 +117,34 @@ class AboutEmbScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Text('Aristotelis Pallasidis',
+                const Text(
+                  'Aristotelis Pallasidis',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Inter',
                   ),
                 ),
-                const Text('Andreas Segani',
+                const Text(
+                  'Andreas Segani',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Inter',
                   ),
                 ),
-                const Text('Victoria Galanopoulou',
+                const Text(
+                  'Evangelia Petraki',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Inter',
                   ),
                 ),
-                const Text('Evangelia Petraki',
+                const Text(
+                  'Ioanna Vrachni',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Inter',
                   ),
                 ),
-                const Text('Thanasis Papadopoulos',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: 'Inter',
-                  ),
-                ),
-                const Text('Ioanna Vrachni',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: 'Inter',
-                  ),
-                ),
-                const Text('Member'),
-                const Text('Member'),
                 const SizedBox(height: 20),
                 const Text(
                   'Follow Us',

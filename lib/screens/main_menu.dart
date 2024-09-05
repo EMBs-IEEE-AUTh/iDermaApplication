@@ -188,7 +188,28 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopNavigationAppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: const Color(0xFF2C3D8F),
+        title: const Text('iDerma',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 32,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w600)),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context); // Navigate back to the previous page
+            },
+            child: const Text('Close',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.normal)),
+          ),
+        ],
+      ),
       body: Container(
         width: double.infinity,
         color: const Color(0xFF2C3D8F),
@@ -203,6 +224,7 @@ class MenuScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
+                    const SizedBox(height: 10),
                     TextButton.icon(
                       onPressed: () {
                         Navigator.push(
@@ -217,10 +239,10 @@ class MenuScreen extends StatelessWidget {
                       ),
                       label: const Text(
                         'Homepage',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 30),
                     TextButton.icon(
                       onPressed: () {
                         Navigator.push(
@@ -236,10 +258,10 @@ class MenuScreen extends StatelessWidget {
                       ),
                       label: const Text(
                         'How the Model Works',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 30),
                     TextButton.icon(
                       onPressed: () {
                         Navigator.push(
@@ -255,10 +277,10 @@ class MenuScreen extends StatelessWidget {
                       ),
                       label: const Text(
                         'Terms Of Use & Privacy Policy',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 30),
                     TextButton.icon(
                       onPressed: () {
                         Navigator.push(
@@ -273,7 +295,7 @@ class MenuScreen extends StatelessWidget {
                       ),
                       label: const Text(
                         'About EMBs AUTh',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ),
                   ],
@@ -295,7 +317,7 @@ class MenuScreen extends StatelessWidget {
                 ),
                 label: const Text(
                   'Logout',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
             ],

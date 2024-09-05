@@ -1,0 +1,20 @@
+flutter_native_splash:
+  # Platform-specific options
+  android: true
+  ios: true
+  web: true
+  
+  # Light mode configuration
+  color: "#2C3D8F"
+  image: "assets/images/logos/logo_copy.png"
+  branding: "assets/images/logos/branding.png"
+
+  # Dark mode configuration
+  color_dark: "#2C3D8F"
+  image_dark: "assets/images/logos/logo_copy.png"
+
+  # Android configuration
+  android_12:
+    color: "#2C3D8F"
+    image: "assets/images/logos/logo_copy.png"
+    branding: "assets/images/logos/branding.png"
