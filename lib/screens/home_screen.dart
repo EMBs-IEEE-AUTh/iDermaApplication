@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:iderma/components/top_navigation_bar.dart';
 
 import 'package:iderma/screens/camera_screen.dart';
+import 'package:iderma/screens/doctor_profile_screen.dart';
+import 'package:iderma/screens/doctos.dart';
 
 class HomePageScreen extends StatelessWidget {
   const HomePageScreen({super.key});
@@ -377,65 +379,67 @@ class _NavigationExampleState extends State<NavigationExample> {
         ),
 
         /// Profile page
-        const SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(40),
-            child: Center(
-              // Wrap the Column with Center widget
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundImage: NetworkImage(
-                        'https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?t=st=1724964432~exp=1724968032~hmac=6be629637440c98198e632c38183b5109b2b752b14af50ebc0ab858e8930cc69&w=138'),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Aristotelia', // Replace with actual name
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 26,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2C3D8F),
-                    ),
-                  ),
-                  Text(
-                    'Pallasidou', // Replace with actual surname
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 26,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2C3D8F),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Email', // Replace with actual email
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Inter',
-                      color: Colors.black,
-                    ),
-                  ),
-                  Text(
-                    'john.doe@example.com', // Replace with actual email
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2C3D8F),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
+        // const SingleChildScrollView(
+        //   child: Padding(
+        //     padding: EdgeInsets.all(40),
+        //     child: Center(
+        //       // Wrap the Column with Center widget
+        //       child: Column(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           CircleAvatar(
+        //             radius: 40,
+        //             backgroundImage: NetworkImage(
+        //                 'https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?t=st=1724964432~exp=1724968032~hmac=6be629637440c98198e632c38183b5109b2b752b14af50ebc0ab858e8930cc69&w=138'),
+        //           ),
+        //           SizedBox(height: 10),
+        //           Text(
+        //             'Aristotelia', // Replace with actual name
+        //             textAlign: TextAlign.center,
+        //             style: TextStyle(
+        //               fontSize: 26,
+        //               fontFamily: 'Inter',
+        //               fontWeight: FontWeight.bold,
+        //               color: Color(0xFF2C3D8F),
+        //             ),
+        //           ),
+        //           Text(
+        //             'Pallasidou', // Replace with actual surname
+        //             textAlign: TextAlign.center,
+        //             style: TextStyle(
+        //               fontSize: 26,
+        //               fontFamily: 'Inter',
+        //               fontWeight: FontWeight.bold,
+        //               color: Color(0xFF2C3D8F),
+        //             ),
+        //           ),
+        //           SizedBox(height: 20),
+        //           Text(
+        //             'Email', // Replace with actual email
+        //             textAlign: TextAlign.center,
+        //             style: TextStyle(
+        //               fontSize: 18,
+        //               fontFamily: 'Inter',
+        //               color: Colors.black,
+        //             ),
+        //           ),
+        //           Text(
+        //             'john.doe@example.com', // Replace with actual email
+        //             textAlign: TextAlign.center,
+        //             style: TextStyle(
+        //               fontSize: 18,
+        //               fontFamily: 'Inter',
+        //               fontWeight: FontWeight.bold,
+        //               color: Color(0xFF2C3D8F),
+        //             ),
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //   ),
+        // ),
+
+        const ProfileListScreen()
       ][currentPageIndex],
     );
   }
