@@ -14,7 +14,7 @@ class ResultScreen extends StatelessWidget {
           child: Stack(
             clipBehavior: Clip.none,
             children: <Widget>[
-              Positioned(
+              const Positioned(
                 top: 20,
                 left: 16,
                 child: Text(
@@ -57,8 +57,8 @@ class ResultScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0),
+          const Padding(
+            padding: EdgeInsets.all(20.0),
             child: Text(
               'Results',
               style: TextStyle(
@@ -69,11 +69,11 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "Disease:",
               style: TextStyle(
@@ -84,8 +84,8 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "Dyshidrotic eczema treatment",
               style: TextStyle(
@@ -95,9 +95,8 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Text(
               "Treatment:",
               style: TextStyle(
@@ -108,8 +107,8 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               '''Moisturizing lotion or cream. This helps\ntreat dry skin.\nSteroid ointment. This can reduce\ninflammation.\nCalcineurin creams.\nSteroid medicines taken by mouth (oral).\nDraining of very large blisters.\nTreatment with psoralen and ultraviolet\nlight (PUVA).\nOther medicines.''',
               style: TextStyle(
@@ -119,8 +118,8 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
           ),
-          Spacer(),
-          SizedBox(
+          const Spacer(),
+          const SizedBox(
             height: 95,
           ),
           GestureDetector(
@@ -129,13 +128,13 @@ class ResultScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      HomePageScreen(), // Navigate to the homepage
+                      const HomePageScreen(), // Navigate to the homepage
                 ),
               );
             },
             child: Container(
-              color: Color.fromRGBO(44, 61, 143, 1),
-              padding: EdgeInsets.symmetric(vertical: 20),
+              color: const Color.fromRGBO(44, 61, 143, 1),
+              padding: const EdgeInsets.symmetric(vertical: 20),
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

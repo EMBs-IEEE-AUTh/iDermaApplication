@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
       builder: (context) => Positioned.fill(
         child: Material(
           color: Colors.black.withOpacity(0.5),
-          child: Center(
+          child: const Center(
             child: CircularProgressIndicator(),
           ),
         ),
@@ -64,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // Navigate to the HomePageScreen after a successful sign-in
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePageScreen()),
+        MaterialPageRoute(builder: (context) => const HomePageScreen()),
       );
     } on FirebaseAuthException catch (e) {
       print("FirebaseAuthException: ${e.message}"); // Debugging print statement
@@ -85,6 +85,8 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  bool _isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             // Name of the team
             buildInitialBox(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Login logo
             Expanded(
@@ -110,12 +112,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     const Text(
                       'Login',
                       style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(44, 61, 143, 1.0)),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 0),
                     const Text(
                       'Find your personal dermatologist now for free',
                       style: TextStyle(
@@ -181,10 +182,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 10),
 
-                    // CheckBox to remember the user
                     Row(
                       children: <Widget>[
-                        Checkbox(value: false, onChanged: (bool? value) {}),
+                        Checkbox(
+                          value: _isChecked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              _isChecked = value!;
+                            });
+                          },
+                          activeColor: Colors
+                              .green, // Changes the color of the checkbox when checked
+                          checkColor: Colors
+                              .white, // Changes the color of the check icon
+                        ),
                         const Text(
                           'Remember me',
                           style: TextStyle(color: Colors.black),
@@ -243,11 +254,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(height: 10),
 
                         // Apple button
-                        SquareTile(
-                          imagePath: 'assets/images/logos/apple.png',
-                          buttonText: 'Sign In with Apple ID',
-                          onTap: () => AuthService().signInWithGoogle(),
-                        ),
+                        // SquareTile(
+                        //     imagePath: 'assets/images/logos/apple.png',
+                        //     buttonText: 'Sign In with Apple ID',
+                        //     onTap: () => AuthService().signInWithGoogle(),
+                        //     width: 100),
                       ],
                     ),
                     const SizedBox(height: 20),
@@ -264,14 +275,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
 Widget buildInitialBox() {
   return Container(
-    color: Color.fromRGBO(44, 61, 143, 1.0),
+    color: const Color.fromRGBO(44, 61, 143, 1.0),
     width: double.infinity,
-    padding: EdgeInsets.only(top: 70.0),
+    padding: const EdgeInsets.only(top: 70.0),
     child: Container(
       width: 400,
       height: 100,
-      color: Color.fromRGBO(44, 61, 143, 1.0),
-      child: Center(
+      color: const Color.fromRGBO(44, 61, 143, 1.0),
+      child: const Center(
         child: Text(
           'iDerma',
           style: TextStyle(

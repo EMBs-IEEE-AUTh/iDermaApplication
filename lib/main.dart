@@ -40,7 +40,7 @@ class _MyAppState extends State<IDermaApplication> {
 // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: AuthPage(),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:iderma/components/top_navigation_bar.dart';
-import 'package:iderma/screens/analysis_screen.dart';
+
 import 'package:iderma/screens/camera_screen.dart';
 
 class HomePageScreen extends StatelessWidget {

@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:iderma/components/button_create_account.dart';
-import 'package:iderma/components/my_button.dart';
 import 'package:iderma/components/my_square_tile.dart';
 import 'package:iderma/screens/authentication/auth/auth_service.dart';
 import 'package:iderma/screens/home_screen.dart';
@@ -22,9 +21,9 @@ class _SignUpState extends State<SignUp> {
     'Confirm password',
   ];
 
-  Color createAccountButtonColor = Color.fromRGBO(44, 61, 143, 1.0);
-  Color googleButtonColor = Color.fromRGBO(246, 246, 248, 1);
-  Color facebookButtonColor = Color.fromRGBO(44, 61, 143, 1.0);
+  Color createAccountButtonColor = const Color.fromRGBO(44, 61, 143, 1.0);
+  Color googleButtonColor = const Color.fromRGBO(246, 246, 248, 1);
+  Color facebookButtonColor = const Color.fromRGBO(44, 61, 143, 1.0);
 
   bool isChecked = false;
   bool isFormValid = false;
@@ -79,7 +78,7 @@ class _SignUpState extends State<SignUp> {
     if (isFormValid) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HomePageScreen()),
+        MaterialPageRoute(builder: (context) => const HomePageScreen()),
       );
     }
   }
@@ -91,7 +90,7 @@ class _SignUpState extends State<SignUp> {
       builder: (context) => Positioned.fill(
         child: Material(
           color: Colors.black.withOpacity(0.5),
-          child: Center(
+          child: const Center(
             child: CircularProgressIndicator(),
           ),
         ),
@@ -177,16 +176,16 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(top: 0),
+          padding: const EdgeInsets.only(top: 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               buildInitialBox(),
-              SizedBox(height: 40),
+              const SizedBox(height: 30),
               const Text(
                 'Sign Up',
                 style: TextStyle(
-                  fontSize: 34,
+                  fontSize: 40,
                   color: Color.fromRGBO(44, 61, 143, 1.0),
                   fontWeight: FontWeight.bold,
                 ),
@@ -212,7 +211,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment
                     .start, // Aligns text and text box to the left
@@ -233,7 +232,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment
                     .start, // Aligns text and text box to the left
@@ -254,7 +253,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment
                     .start, // Aligns text and text box to the left
@@ -275,7 +274,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment
                     .start, // Aligns text and text box to the left
@@ -296,7 +295,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -309,7 +308,7 @@ class _SignUpState extends State<SignUp> {
                       });
                     },
                   ),
-                  Text(
+                  const Text(
                     'I agree to the terms and conditions',
                     style: TextStyle(
                       fontSize: 15,
@@ -317,13 +316,13 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               CustomButton(
                 buttonText: 'Create Account',
                 isFormValid:
                     isFormValid, // Boolean to check if the form is valid
                 createAccountButtonColor:
-                    Color.fromRGBO(44, 61, 143, 1.0), // Your button color
+                    const Color.fromRGBO(44, 61, 143, 1.0), // Your button color
                 onTap: () {
                   signUserUp();
                   CollectionReference collRef =
@@ -339,38 +338,38 @@ class _SignUpState extends State<SignUp> {
                   });
                 },
               ),
-              SizedBox(height: 8),
-              Text(
+              const SizedBox(height: 8),
+              const Text(
                 'or',
                 style: TextStyle(
                   fontSize: 15,
                   color: Color.fromRGBO(44, 104, 226, 1),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   //google button
                   SquareTile(
-                    onTap: () => AuthService().signInWithGoogle(),
-                    imagePath: 'assets/images/logos/google.png',
-                    buttonText: 'Google Sing In',
-                  ),
+                      onTap: () => AuthService().signInWithGoogle(),
+                      imagePath: 'assets/images/logos/google.png',
+                      buttonText: 'Google Sing In',
+                      width: 300),
 
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
 
                   //apple button
                   SquareTile(
-                    onTap: () => AuthService().signInWithGoogle(),
-                    imagePath: 'assets/images/logos/apple.png',
-                    buttonText: 'Apple Id Sign In',
-                  )
+                      onTap: () => AuthService().signInWithGoogle(),
+                      imagePath: 'assets/images/logos/apple.png',
+                      buttonText: 'Apple Id Sign In',
+                      width: 300)
                 ],
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               buildInitialBoxLogo(),
             ],
           ),
@@ -383,14 +382,14 @@ class _SignUpState extends State<SignUp> {
 
   Widget buildInitialBox() {
     return Container(
-      color: Color.fromRGBO(44, 61, 143, 1.0),
+      color: const Color.fromRGBO(44, 61, 143, 1.0),
       width: double.infinity,
-      padding: EdgeInsets.only(top: 70.0),
+      padding: const EdgeInsets.only(top: 65.0),
       child: Container(
-        width: 400,
-        height: 82,
-        color: Color.fromRGBO(44, 61, 143, 1.0),
-        child: Center(
+        width: 320,
+        height: 78,
+        color: const Color.fromRGBO(44, 61, 143, 1.0),
+        child: const Center(
           child: Text(
             'iDerma',
             style: TextStyle(
@@ -410,19 +409,19 @@ class _SignUpState extends State<SignUp> {
       {required TextEditingController controller,
       required String placeholderText}) {
     return Container(
-      width: 290.15,
-      height: 42,
+      width: 260,
+      height: 35,
       decoration: BoxDecoration(
-        color: Color.fromRGBO(205, 222, 255, 1.0),
+        color: const Color.fromRGBO(206, 222, 250, 1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
         children: [
-          SizedBox(width: 18),
+          const SizedBox(width: 15),
           Expanded(
             child: TextFormField(
               controller: controller,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 15,
                 fontWeight: FontWeight.normal,
@@ -432,7 +431,7 @@ class _SignUpState extends State<SignUp> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: placeholderText,
-                hintStyle: TextStyle(
+                hintStyle: const TextStyle(
                   color: Color.fromRGBO(44, 61, 143, 1.0),
                 ),
                 contentPadding: EdgeInsets.zero,
@@ -453,14 +452,14 @@ class _SignUpState extends State<SignUp> {
       onTapDown: (_) {
         if (isFormValid) {
           setState(() {
-            createAccountButtonColor = Color.fromRGBO(205, 222, 255, 1.0);
+            createAccountButtonColor = const Color.fromARGB(255, 195, 208, 233);
           });
         }
       },
       onTapUp: (_) {
         if (isFormValid) {
           setState(() {
-            createAccountButtonColor = Color.fromRGBO(44, 61, 143, 1.0);
+            createAccountButtonColor = const Color.fromRGBO(44, 61, 143, 1.0);
           });
         }
       },
@@ -468,7 +467,7 @@ class _SignUpState extends State<SignUp> {
         buttonText: '',
         isFormValid: isFormValid, // Boolean to check if the form is valid
         createAccountButtonColor:
-            Color.fromRGBO(44, 61, 143, 1.0), // Your button color
+            const Color.fromRGBO(44, 61, 143, 1.0), // Your button color
         onTap: () {
           CollectionReference collRef =
               FirebaseFirestore.instance.collection('client');
@@ -490,18 +489,18 @@ class _SignUpState extends State<SignUp> {
 
   Widget buildInitialBoxLogo() {
     return Container(
-      color: Color.fromRGBO(44, 61, 143, 1.0),
+      color: const Color.fromRGBO(44, 61, 143, 1.0),
       width: double.infinity,
-      padding: EdgeInsets.only(top: 10.0),
+      padding: const EdgeInsets.only(top: 10.0),
       child: Container(
         width: 60,
-        height: 52,
-        color: Color.fromRGBO(44, 61, 143, 1.0),
-        child: Center(
+        height: 42,
+        color: const Color.fromRGBO(44, 61, 143, 1.0),
+        child: const Center(
           child: Align(
             alignment: Alignment.topCenter,
             child: Padding(
-              padding: const EdgeInsets.only(top: 0.5),
+              padding: EdgeInsets.only(top: 0.5),
               child: Text(
                 'EMB AUTH',
                 style: TextStyle(

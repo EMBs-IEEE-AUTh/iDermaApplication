@@ -1,6 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:iderma/components/my_square_tile.dart';
 import 'package:iderma/screens/authentication/auth/auth_service.dart';
 import 'package:iderma/screens/authentication/login_with_email_screen.dart';
 import 'package:iderma/screens/authentication/sign_up_screen.dart';
@@ -52,9 +50,9 @@ class _LoginPagesScreenState extends State<LoginPagesScreen> {
                   const Text(
                     'Login',
                     style: TextStyle(
-                      fontSize: 34,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Color(0xFF2C3D8F),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -69,26 +67,61 @@ class _LoginPagesScreenState extends State<LoginPagesScreen> {
                   const SizedBox(height: 30),
 
                   // Google Sign-In Button
-                  SquareTile(
-                    imagePath: 'assets/images/logos/google.png',
-                    buttonText: 'Sign In with Google',
-                    onTap: () => AuthService().signInWithGoogle(),
-                    width: 400.00,
+                  SizedBox(
+                    width: 400, // Use the width parameter
+                    child: ElevatedButton.icon(
+                      onPressed: () => AuthService().signInWithGoogle(),
+                      style: ElevatedButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 16),
+                        backgroundColor: const Color(0xFF4285F4),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 20.0),
+                        elevation: 0, // Remove shadow
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                      ),
+                      icon: Image.asset(
+                        "assets/images/logos/google.png",
+                        width: 24,
+                        height: 24,
+                        color: Colors.white,
+                      ),
+                      label: const Text("Sign In With Google"),
+                    ),
                   ),
                   const SizedBox(height: 10),
 
                   // Apple Sign-In Button
-                  SquareTile(
-                    imagePath: 'assets/images/logos/apple.png',
-                    buttonText: 'Sign In with Apple ID',
-                    onTap: () => AuthService().signInWithGoogle(),
+                  SizedBox(
+                    width: 400, // Use the width parameter
+                    child: ElevatedButton.icon(
+                      onPressed: () => AuthService().signInWithGoogle(),
+                      style: ElevatedButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 16),
+                        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 20.0),
+                        elevation: 0, // Remove shadow
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                      ),
+                      icon: Image.asset(
+                        "assets/images/logos/apple.png",
+                        width: 24,
+                        height: 24,
+                        color: Colors.white,
+                      ),
+                      label: const Text("Sign In With Apple ID"),
+                    ),
                   ),
 
                   const SizedBox(height: 20),
 
                   // Facebook Sign-In
                   SizedBox(
-                    width: double.infinity,
+                    width: 400,
                     child: ElevatedButton.icon(
                       onPressed: () {
                         // Implement Facebook Sign-In
@@ -119,7 +152,7 @@ class _LoginPagesScreenState extends State<LoginPagesScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LoginScreen(),
+                            builder: (context) => const LoginScreen(),
                           ),
                         );
                       },

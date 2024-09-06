@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonText;
@@ -23,7 +22,10 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: isFormValid ? onTap : null,
         style: ElevatedButton.styleFrom(
-          backgroundColor: isFormValid ? createAccountButtonColor : Colors.grey,
+          backgroundColor: isFormValid
+              ? createAccountButtonColor
+              : const Color.fromRGBO(
+                  44, 61, 143, 1.0), // Set to pink when not valid
           foregroundColor: Colors.white,
           textStyle: const TextStyle(
             fontSize: 15,
@@ -34,8 +36,10 @@ class CustomButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
             side: BorderSide(
-              color:
-                  isFormValid ? createAccountButtonColor : Colors.transparent,
+              color: isFormValid
+                  ? createAccountButtonColor
+                  : const Color.fromRGBO(44, 61, 143,
+                      1.0), // Set border color to pink when not valid
             ),
           ),
         ),

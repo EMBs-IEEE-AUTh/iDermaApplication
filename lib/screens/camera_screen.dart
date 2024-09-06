@@ -106,7 +106,7 @@ class _CameraScreenState extends State<CameraScreen> {
                     horizontal: 20,
                   ),
                   backgroundColor: const Color.fromRGBO(44, 61, 143, 1),
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.zero, // Square corners
                   ),
                 ),

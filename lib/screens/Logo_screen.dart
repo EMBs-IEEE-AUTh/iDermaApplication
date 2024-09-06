@@ -17,7 +17,7 @@ class LogoPageContent extends StatelessWidget {
               'assets/images/logos/logo.png',
               width: 150,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             const Text(
               'EMB',
               style: TextStyle(
@@ -36,12 +36,12 @@ class LogoPageContent extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Image.asset(
               'assets/images/introduction/details.png',
               width: 250,
             ),
-            SizedBox(height: 40), // Adjust the height as needed
+            const SizedBox(height: 40), // Adjust the height as needed
             GestureDetector(
               onTap: () {
                 // Navigate to the SignUp page
