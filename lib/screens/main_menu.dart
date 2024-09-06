@@ -58,8 +58,12 @@ class MenuScreen extends StatelessWidget {
                               builder: (context) => const HomePageScreen()),
                         );
                       },
-                      icon: const ImageIcon(
-                        AssetImage('assets/images/main_menu_icons/home.png'),
+                      // icon: const ImageIcon(
+                      //   AssetImage('assets/images/main_menu_icons/home.png'),
+                      //   color: Colors.white,
+                      // ),
+                      icon: const Icon(
+                        Icons.home, // Change this to the desired icon
                         color: Colors.white,
                       ),
                       label: const Text(
@@ -77,8 +81,13 @@ class MenuScreen extends StatelessWidget {
                                   const HowTheModelWorksScreen()),
                         );
                       },
-                      icon: const ImageIcon(
-                        AssetImage('assets/images/main_menu_icons/gear.png'),
+                      // icon: const ImageIcon(
+                      //   AssetImage('assets/images/main_menu_icons/gear.png'),
+                      //   color: Colors.white,
+                      // ),
+                      icon: const Icon(
+                        Icons
+                            .settings_suggest, // Change this to the desired icon
                         color: Colors.white,
                       ),
                       label: const Text(
@@ -95,9 +104,13 @@ class MenuScreen extends StatelessWidget {
                               builder: (context) => const TearmsOfUseScreen()),
                         );
                       },
-                      icon: const ImageIcon(
-                        AssetImage(
-                            'assets/images/main_menu_icons/privacy_policy.png'),
+                      // icon: const ImageIcon(
+                      //   AssetImage(
+                      //       'assets/images/main_menu_icons/privacy_policy.png'),
+                      //   color: Colors.white,
+                      // ),
+                      icon: const Icon(
+                        Icons.privacy_tip, // Change this to the desired icon
                         color: Colors.white,
                       ),
                       label: const Text(
@@ -114,8 +127,12 @@ class MenuScreen extends StatelessWidget {
                               builder: (context) => const AboutEmbScreen()),
                         );
                       },
-                      icon: const ImageIcon(
-                        AssetImage('assets/images/main_menu_icons/about.png'),
+                      // icon: const ImageIcon(
+                      //   AssetImage('assets/images/main_menu_icons/about.png'),
+                      //   color: Colors.white,
+                      // ),
+                      icon: const Icon(
+                        Icons.info, // Change this to the desired icon
                         color: Colors.white,
                       ),
                       label: const Text(
@@ -137,8 +154,12 @@ class MenuScreen extends StatelessWidget {
                         builder: (context) => const LoginPagesScreen()),
                   );
                 },
-                icon: const ImageIcon(
-                  AssetImage('assets/images/main_menu_icons/logout.png'),
+                // icon: const ImageIcon(
+                //   AssetImage('assets/images/main_menu_icons/logout.png'),
+                //   color: Colors.white,
+                // ),
+                icon: const Icon(
+                  Icons.logout, // Change this to the desired icon
                   color: Colors.white,
                 ),
                 label: const Text(

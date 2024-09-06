@@ -22,9 +22,6 @@ dependencies:
   cloud_firestore: ^5.4.0
   provider: ^6.0.5
     
-
-
-
   url_launcher: ^6.0.20
 
   # Camera
