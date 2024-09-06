@@ -6,15 +6,15 @@ flutter_native_splash:
   
   # Light mode configuration
   color: "#2C3D8F"
-  image: "assets/images/logos/logo_copy.png"
+  image: "assets/images/logos/logoo.png"
   branding: "assets/images/logos/branding.png"
 
   # Dark mode configuration
   color_dark: "#2C3D8F"
-  image_dark: "assets/images/logos/logo_copy.png"
+  image_dark: "assets/images/logos/logoo.png"
 
   # Android configuration
   android_12:
     color: "#2C3D8F"
-    image: "assets/images/logos/logo_copy.png"
+    image: "assets/images/logos/logoo.png"
     branding: "assets/images/logos/branding.png"

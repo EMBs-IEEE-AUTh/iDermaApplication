@@ -20,6 +20,7 @@ dependencies:
 
   flutter_native_splash: ^2.4.1
   cloud_firestore: ^5.4.0
+  provider: ^6.0.5
     
 
 
@@ -126,5 +127,6 @@ flutter:
     - assets/images/main_menu_icons/logout.png
     - assets/images/logos/logo_copy.png
     - assets/images/logos/branding.png
+    - assets/images/logos/logoo.png
 
   uses-material-design: true

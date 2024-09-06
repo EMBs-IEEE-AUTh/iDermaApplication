@@ -176,10 +176,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:iderma/screens/about_emb_screen.dart';
+import 'package:iderma/screens/authentication/auth/authentication_service.dart';
 import 'package:iderma/screens/authentication/login_pages_screen.dart';
 import 'package:iderma/screens/home_screen.dart';
 import 'package:iderma/screens/how_the_model_works_screen.dart';
 import 'package:iderma/screens/terms_of_use_screen.dart';
+import 'package:provider/provider.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -303,8 +305,9 @@ class MenuScreen extends StatelessWidget {
               // Add a Spacer to push the Logout button to the bottom
               const Spacer(),
               TextButton.icon(
-                onPressed: () {
-                  Navigator.push(
+                onPressed: () async {
+                  await context.read<AuthenticationService>().signOut();
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const LoginPagesScreen()),
