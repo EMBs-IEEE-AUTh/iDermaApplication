@@ -514,7 +514,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                         Padding(
                           padding: EdgeInsets.only(left: 8.0),
                           child: Icon(
-                            Icons.arrow_forward,
+                            Icons.arrow_forward_ios_rounded,
                             color: Colors.white,
                             size: 30,
                           ),

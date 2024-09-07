@@ -9,49 +9,47 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80), // Height of the app bar
-        child: Container(
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: <Widget>[
-              const Positioned(
-                top: 20,
-                left: 16,
-                child: Text(
-                  'iDerma',
+        preferredSize: const Size.fromHeight(80), // Height of the app bar
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: <Widget>[
+            const Positioned(
+              top: 20,
+              left: 16,
+              child: Text(
+                'iDerma',
+                style: TextStyle(
+                  fontSize: 32,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF2C3D8F),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 25,
+              right: 10,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const HomePageScreen(), // Navigate to the homepage
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Back',
                   style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 36,
-                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                    fontFamily: 'Inter',
                     color: Color.fromRGBO(44, 61, 143, 1),
                   ),
                 ),
               ),
-              Positioned(
-                top: 25,
-                right: 10,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            const HomePageScreen(), // Navigate to the homepage
-                      ),
-                    );
-                  },
-                  child: const Text(
-                    'Back',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Inter',
-                      color: Color.fromRGBO(44, 61, 143, 1),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       body: Column(
@@ -63,7 +61,7 @@ class ResultScreen extends StatelessWidget {
               'Results',
               style: TextStyle(
                 fontFamily: 'Inter',
-                fontSize: 20,
+                fontSize: 28,
                 fontWeight: FontWeight.w800,
                 color: Color.fromRGBO(44, 61, 143, 1),
               ),
@@ -78,8 +76,8 @@ class ResultScreen extends StatelessWidget {
               "Disease:",
               style: TextStyle(
                 color: Color.fromRGBO(44, 61, 143, 1),
-                fontFamily: 'Poppins',
-                fontSize: 20,
+                fontFamily: 'Inter',
+                fontSize: 24,
                 fontWeight: FontWeight.w800,
               ),
             ),
@@ -102,7 +100,7 @@ class ResultScreen extends StatelessWidget {
               style: TextStyle(
                 color: Color.fromRGBO(44, 61, 143, 1),
                 fontFamily: 'Inter',
-                fontSize: 20,
+                fontSize: 24,
                 fontWeight: FontWeight.w800,
               ),
             ),
@@ -144,7 +142,7 @@ class ResultScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Back to\nHomepage',
+                          'Back to Homepage',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -152,7 +150,7 @@ class ResultScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 50),
                         Text(
                           'Let\'s find you a doctor',
                           style: TextStyle(
@@ -168,13 +166,11 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 20),
-                    child: Text(
-                      '>>>>>>>>',
-                      style: TextStyle(
-                          fontSize: 24,
-                          fontFamily: 'Inter',
-                          color: Colors.white),
+                    padding: EdgeInsets.only(right: 20.0),
+                    child: Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: Colors.white,
+                      size: 30,
                     ),
                   ),
                 ],

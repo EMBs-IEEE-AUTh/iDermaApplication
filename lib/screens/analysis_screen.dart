@@ -22,7 +22,7 @@ class AnalysisScreen extends StatelessWidget {
                   color: Color.fromRGBO(44, 61, 143, 1),
                   fontSize: 36.0,
                   fontWeight: FontWeight.w500,
-                  fontFamily: 'Inter',
+                  fontFamily: 'Poppins',
                 ),
                 textAlign: TextAlign.left,
               ),
@@ -121,12 +121,12 @@ class AnalysisScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Text(
-                        '>>>>>>>>',
-                        style: TextStyle(
+                      Padding(
+                        padding: EdgeInsets.only(left: 8.0),
+                        child: Icon(
+                          Icons.arrow_forward_ios_rounded,
                           color: Colors.white,
-                          fontFamily: 'Inter',
-                          fontSize: 24,
+                          size: 30,
                         ),
                       ),
                     ],

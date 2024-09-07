@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iderma/components/top_navigation_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutEmbScreen extends StatelessWidget {
   const AboutEmbScreen({super.key});
@@ -145,6 +146,55 @@ class AboutEmbScreen extends StatelessWidget {
                     fontFamily: 'Inter',
                   ),
                 ),
+                const Text(
+                  'Sofia Georgiou',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                  ),
+                ),
+                const Text(
+                  'Giorgos Petalas',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                  ),
+                ),
+                const Text(
+                  'Maria Simoglou',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                  ),
+                ),
+                const Text(
+                  'Xristos Giannakopoulos',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                  ),
+                ),
+                const Text(
+                  'Vera Salmatzidou',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                  ),
+                ),
+                const Text(
+                  'Eleni Iatrelli',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                  ),
+                ),
+                const Text(
+                  'Georgia Karapanagiotidou',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                  ),
+                ),
                 const SizedBox(height: 20),
                 const Text(
                   'Follow Us',
@@ -160,8 +210,26 @@ class AboutEmbScreen extends StatelessWidget {
                   children: [
                     IconButton(
                       icon: const Icon(Icons.facebook),
-                      onPressed: () {
-                        // Add your Facebook URL here
+                      onPressed: () async {
+                        const url =
+                            'https://www.facebook.com/embsauth'; // Replace with your Facebook URL
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.arrow_outward_sharp),
+                      onPressed: () async {
+                        const url =
+                            'https://emb.web.auth.gr/el/'; // Replace with your Facebook URL
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
                       },
                     ),
                   ],
