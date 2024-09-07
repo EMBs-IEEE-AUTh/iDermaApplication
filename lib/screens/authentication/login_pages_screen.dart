@@ -68,7 +68,7 @@ class _LoginPagesScreenState extends State<LoginPagesScreen> {
 
                   // Google Sign-In Button
                   SizedBox(
-                    width: 400, // Use the width parameter
+                    width: double.infinity, // Use the width parameter
                     child: ElevatedButton.icon(
                       onPressed: () => AuthService().signInWithGoogle(),
                       style: ElevatedButton.styleFrom(
@@ -94,7 +94,7 @@ class _LoginPagesScreenState extends State<LoginPagesScreen> {
 
                   // Apple Sign-In Button
                   SizedBox(
-                    width: 400, // Use the width parameter
+                    width: double.infinity, // Use the width parameter
                     child: ElevatedButton.icon(
                       onPressed: () => AuthService().signInWithGoogle(),
                       style: ElevatedButton.styleFrom(
@@ -121,7 +121,7 @@ class _LoginPagesScreenState extends State<LoginPagesScreen> {
 
                   // Facebook Sign-In
                   SizedBox(
-                    width: 400,
+                    width: double.infinity,
                     child: ElevatedButton.icon(
                       onPressed: () {
                         // Implement Facebook Sign-In
