@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:iderma/screens/result_screen.dart';
-// Make sure to import your new screen
 
 class AnalysisScreen extends StatelessWidget {
   const AnalysisScreen({super.key});
@@ -11,31 +9,27 @@ class AnalysisScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Align the title to the top-left
           const Align(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: EdgeInsets.all(16.0), // Adjust padding as needed
+              padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 28.0),
               child: Text(
                 'iDerma',
                 style: TextStyle(
-                  color: Color.fromRGBO(44, 61, 143, 1),
-                  fontSize: 36.0,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 32,
                   fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF2C3D8F),
                 ),
                 textAlign: TextAlign.left,
               ),
             ),
           ),
-          // Rest of your UI
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(
-                  height:
-                      150), // Adjust height to account for the title's position
+              const SizedBox(height: 150),
               const Text(
                 'Please',
                 style: TextStyle(

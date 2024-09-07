@@ -61,7 +61,7 @@ class ResultScreen extends StatelessWidget {
               'Results',
               style: TextStyle(
                 fontFamily: 'Inter',
-                fontSize: 28,
+                fontSize: 34,
                 fontWeight: FontWeight.w800,
                 color: Color.fromRGBO(44, 61, 143, 1),
               ),

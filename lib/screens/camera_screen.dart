@@ -102,7 +102,7 @@ class _CameraScreenState extends State<CameraScreen> {
                     : null,
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 12,
+                    vertical: 20,
                     horizontal: 20,
                   ),
                   backgroundColor: const Color.fromRGBO(44, 61, 143, 1),
