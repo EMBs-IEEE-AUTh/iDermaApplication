@@ -8,6 +8,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // Import the new page
 
 class SignUp extends StatefulWidget {
+  const SignUp({super.key});
+
   @override
   _SignUpState createState() => _SignUpState();
 }
@@ -354,7 +356,7 @@ class _SignUpState extends State<SignUp> {
                   SquareTile(
                       onTap: () => AuthService().signInWithGoogle(),
                       imagePath: 'assets/images/logos/google.png',
-                      buttonText: 'Google Sing In',
+                      buttonText: 'Sign In With Google',
                       width: 300),
 
                   const SizedBox(
@@ -365,7 +367,7 @@ class _SignUpState extends State<SignUp> {
                   SquareTile(
                       onTap: () => AuthService().signInWithGoogle(),
                       imagePath: 'assets/images/logos/apple.png',
-                      buttonText: 'Apple Id Sign In',
+                      buttonText: 'Sign In With Apple ID',
                       width: 300)
                 ],
               ),

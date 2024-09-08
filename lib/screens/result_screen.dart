@@ -115,7 +115,7 @@ class ResultScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
-              formatResponse(result) ?? "No results available",
+              formatResponse(result),
               style: const TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 20,

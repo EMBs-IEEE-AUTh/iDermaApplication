@@ -415,7 +415,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                       Text(
                         'This button and Page is showed only the first time, or when you press from menu the Tab Help!',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
                         ),
@@ -435,7 +435,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                       Text(
                         'You will be dropped in a page with a picture frame. Give access to the app to use the phone’s camera and you’re Ready to go!',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
                         ),
@@ -455,7 +455,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                       Text(
                         'Take the picture, you can retake if the quality is blurry or cancel to return to the menu.',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
                         ),
@@ -465,7 +465,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                         'Step 4:',
                         textAlign: TextAlign.start,
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 26,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF2C3D8F),
@@ -475,7 +475,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                       Text(
                         'Wait for the result and see possible treatments or general information about the disease!',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
                         ),
