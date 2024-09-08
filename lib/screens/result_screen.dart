@@ -1,20 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:iderma/screens/home_screen.dart';
-// Import your homepage widget
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  final String? result; // Accept the result as a parameter
+
+  const ResultScreen({super.key, this.result});
+
+  // Method to format or modify the response text
+  String formatResponse(String? response) {
+    if (response == null || response.isEmpty) {
+      return "No results available";
+    }
+
+    // Remove unwanted characters: {}, :, [, ], and the word "top_5_diseases"
+    String cleanedResponse = response
+        .replaceAll(RegExp(r'[{}\[\]:]'), '') // Remove {, }, [, ], and :
+        .replaceAll("Top_5_diseases", ''); // Remove "Top_5_diseases"
+
+    // Extract text inside quotes
+    final matches = RegExp(r'"([^"]+)"').allMatches(cleanedResponse);
+    List<String> formattedResults = matches.map((match) {
+      String text = match.group(1) ?? "";
+      // Capitalize each word in the text
+      String capitalizedText = text
+          .split(' ')
+          .map(
+              (word) => word[0].toUpperCase() + word.substring(1).toLowerCase())
+          .join(' ');
+      return capitalizedText; // Do not add bullet point here
+    }).toList();
+
+    // Format results
+    if (formattedResults.isNotEmpty) {
+      // The first result without a bullet point
+      String formattedResponse = formattedResults[0];
+
+      // Add bullet points to the remaining results
+      if (formattedResults.length > 1) {
+        formattedResponse += formattedResults
+            .skip(1)
+            .map((result) =>
+                '\n• $result') // Add bullet points to the remaining results
+            .join();
+      }
+
+      return formattedResponse;
+    } else {
+      return "No results available";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80), // Height of the app bar
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(80),
         child: Stack(
           clipBehavior: Clip.none,
           children: <Widget>[
-            const Positioned(
-              top: 20,
+            Positioned(
+              top: 40,
               left: 16,
               child: Text(
                 'iDerma',
@@ -26,29 +71,28 @@ class ResultScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              top: 25,
-              right: 10,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          const HomePageScreen(), // Navigate to the homepage
-                    ),
-                  );
-                },
-                child: const Text(
-                  'Back',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Inter',
-                    color: Color.fromRGBO(44, 61, 143, 1),
-                  ),
-                ),
-              ),
-            ),
+            // Positioned(
+            //   top: 35,
+            //   right: 10,
+            //   child: TextButton(
+            //     onPressed: () {
+            //       Navigator.push(
+            //         context,
+            //         MaterialPageRoute(
+            //           builder: (context) => const HomePageScreen(),
+            //         ),
+            //       );
+            //     },
+            //     child: const Text(
+            //       'Back',
+            //       style: TextStyle(
+            //         fontSize: 20,
+            //         fontFamily: 'Inter',
+            //         color: Color.fromRGBO(44, 61, 143, 1),
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -58,7 +102,7 @@ class ResultScreen extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
-              'Results',
+              'Top 5 Possible Diseases',
               style: TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 34,
@@ -67,66 +111,28 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
-              "Disease:",
-              style: TextStyle(
-                color: Color.fromRGBO(44, 61, 143, 1),
-                fontFamily: 'Inter',
-                fontSize: 24,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
-              "Dyshidrotic eczema treatment",
-              style: TextStyle(
-                color: Color.fromRGBO(44, 61, 143, 1),
+              formatResponse(result) ?? "No results available",
+              style: const TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 20,
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-            child: Text(
-              "Treatment:",
-              style: TextStyle(
-                color: Color.fromRGBO(44, 61, 143, 1),
-                fontFamily: 'Inter',
-                fontSize: 24,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
-              '''Moisturizing lotion or cream. This helps\ntreat dry skin.\nSteroid ointment. This can reduce\ninflammation.\nCalcineurin creams.\nSteroid medicines taken by mouth (oral).\nDraining of very large blisters.\nTreatment with psoralen and ultraviolet\nlight (PUVA).\nOther medicines.''',
-              style: TextStyle(
-                color: Color.fromRGBO(44, 61, 143, 1),
-                fontFamily: 'Inter',
-                fontSize: 16,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ),
           const Spacer(),
           const SizedBox(
-            height: 95,
+            height: 20,
           ),
           GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      const HomePageScreen(), // Navigate to the homepage
+                  builder: (context) => const HomePageScreen(),
                 ),
               );
             },
@@ -137,10 +143,21 @@ class ResultScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 25),
+                    padding: EdgeInsets.only(left: 25, top: 20, bottom: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(
+                          'The result may not be entirely \naccurate, so always consult a \ndoctor for the definitive answer.',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontFamily: 'Inter',
+                            decorationColor: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(height: 20),
                         Text(
                           'Back to Homepage',
                           style: TextStyle(
@@ -150,23 +167,11 @@ class ResultScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        SizedBox(height: 50),
-                        Text(
-                          'Let\'s find you a doctor',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Inter',
-                            decoration: TextDecoration.underline,
-                            decorationColor: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 20.0),
+                    padding: EdgeInsets.only(right: 35),
                     child: Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: Colors.white,

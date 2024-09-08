@@ -3,7 +3,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:iderma/components/top_navigation_bar.dart';
 import 'package:iderma/screens/analysis_screen.dart';
+import 'package:iderma/screens/result_screen.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:http/http.dart'
+    as http; // Import the http package for API calls
 
 class CameraScreen extends StatefulWidget {
   const CameraScreen({super.key});
@@ -14,6 +17,7 @@ class CameraScreen extends StatefulWidget {
 
 class _CameraScreenState extends State<CameraScreen> {
   File? _selectedImage;
+  String? _apiResponse; // Variable to store API response
 
   Future<void> _pickImageFromGallery() async {
     final pickedFile =
@@ -32,6 +36,39 @@ class _CameraScreenState extends State<CameraScreen> {
       setState(() {
         _selectedImage = File(pickedFile.path);
       });
+    }
+  }
+
+  Future<void> _uploadImageToAPI(File image) async {
+    final url = Uri.parse(
+        'https://187a-188-73-234-133.ngrok-free.app/predict'); // API endpoint
+    final request = http.MultipartRequest('POST', url);
+    request.files.add(await http.MultipartFile.fromPath('file', image.path));
+
+    try {
+      final response = await request.send();
+
+      if (response.statusCode == 200) {
+        final responseData = await response.stream.bytesToString();
+        setState(() {
+          _apiResponse = responseData; // Store the API response
+        });
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ResultScreen(
+                result: _apiResponse), // Pass the result to ResultScreen
+          ),
+        );
+      } else {
+        if (kDebugMode) {
+          print('Failed to upload image: ${response.statusCode}');
+        }
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print('Error uploading image: $e');
+      }
     }
   }
 
@@ -85,7 +122,6 @@ class _CameraScreenState extends State<CameraScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              // Button to navigate to the AnalysisScreen
               ElevatedButton(
                 onPressed: _selectedImage != null
                     ? () {
@@ -95,9 +131,7 @@ class _CameraScreenState extends State<CameraScreen> {
                             builder: (context) => const AnalysisScreen(),
                           ),
                         );
-                        if (kDebugMode) {
-                          print('Continue button pressed!');
-                        }
+                        _uploadImageToAPI(_selectedImage!);
                       }
                     : null,
                 style: ElevatedButton.styleFrom(
@@ -107,7 +141,7 @@ class _CameraScreenState extends State<CameraScreen> {
                   ),
                   backgroundColor: const Color.fromRGBO(44, 61, 143, 1),
                   shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.zero, // Square corners
+                    borderRadius: BorderRadius.zero,
                   ),
                 ),
                 child: const Row(

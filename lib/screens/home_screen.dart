@@ -215,7 +215,9 @@ class _NavigationExampleState extends State<NavigationExample> {
                       const CircleAvatar(
                         radius: 40,
                         backgroundImage: NetworkImage(
-                            'https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?t=st=1724964432~exp=1724968032~hmac=6be629637440c98198e632c38183b5109b2b752b14af50ebc0ab858e8930cc69&w=1380'),
+                            'https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?t=st=1724964432~exp=1724968032~hmac=6be629637440c98198e632c38183b5109b2b752b14af50ebc0ab858e8930cc69&w=1380'
+                            // 'https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2281862025.jpg'
+                            ),
                       ),
                       const SizedBox(width: 24),
                       Column(
@@ -230,7 +232,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                                 color: Colors.black),
                           ),
                           const Text(
-                            'Aristotelia' '!',
+                            'Welcome to iDerma',
                             style: TextStyle(
                               fontSize: 24,
                               fontFamily: 'Inter',
@@ -478,7 +480,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(height: 23),
+                      SizedBox(height: 0),
                     ],
                   ),
                 ),
