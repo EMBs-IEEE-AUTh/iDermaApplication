@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "918664536326",
     "project_id": "iderma-20879",
-    "storage_bucket": "iderma-20879.appspot.com"
+    "storage_bucket": "iderma-20879.firebasestorage.app"
   },
   "client": [
     {
@@ -12,7 +12,20 @@
           "package_name": "com.example.iderma"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "918664536326-0v1p0vmo5b3hctq09qpqeksldtf22q2u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iderma",
+            "certificate_hash": "afdef2ab330dad7a52206ebbda3e30e0fa99a645"
+          }
+        },
+        {
+          "client_id": "918664536326-irtn4dqq4639dvjn6m14r76jjj6muu3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBpiv13z1gOrKb2wILKVCLp3lePCs3mh58"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918664536326-irtn4dqq4639dvjn6m14r76jjj6muu3c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "918664536326-v4is5llhjdoo2nj57nrscrmn6gh5jna6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.iderma"
+              }
+            }
+          ]
         }
       }
     }

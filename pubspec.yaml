@@ -8,7 +8,7 @@ version: 1.2.1
 # The environment section ensures compatibility with a specific Dart version.
 # ---------------------------
 environment:
-  sdk: '>=3.4.0 <4.0.0'
+  sdk: '^3.5.0'
 
 
 # ---------------------------
@@ -43,8 +43,8 @@ dependencies:
   firebase_auth: ^5.1.3
 
   # Google Sign In 
-  google_sign_in_ios: ^5.7.6
-  google_sign_in: ^6.2.1
+  google_sign_in: ^6.2.2
+  flutter_facebook_auth: ^7.1.1
 
 
 # ---------------------------

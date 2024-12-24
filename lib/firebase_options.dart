@@ -46,7 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '918664536326',
     projectId: 'iderma-20879',
     authDomain: 'iderma-20879.firebaseapp.com',
-    storageBucket: 'iderma-20879.appspot.com',
+    storageBucket: 'iderma-20879.firebasestorage.app',
     measurementId: 'G-YXMSJ3B9CK',
   );
 
@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
     appId: '1:918664536326:android:14b34ce2995789ccc47e87',
     messagingSenderId: '918664536326',
     projectId: 'iderma-20879',
-    storageBucket: 'iderma-20879.appspot.com',
+    storageBucket: 'iderma-20879.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -63,7 +63,9 @@ class DefaultFirebaseOptions {
     appId: '1:918664536326:ios:573d5d96339d6c56c47e87',
     messagingSenderId: '918664536326',
     projectId: 'iderma-20879',
-    storageBucket: 'iderma-20879.appspot.com',
+    storageBucket: 'iderma-20879.firebasestorage.app',
+    androidClientId: '918664536326-mlr1roekgsrctbpc1u50e7aebghr9mp7.apps.googleusercontent.com',
+    iosClientId: '918664536326-v4is5llhjdoo2nj57nrscrmn6gh5jna6.apps.googleusercontent.com',
     iosBundleId: 'com.example.iderma',
   );
 
@@ -72,7 +74,9 @@ class DefaultFirebaseOptions {
     appId: '1:918664536326:ios:573d5d96339d6c56c47e87',
     messagingSenderId: '918664536326',
     projectId: 'iderma-20879',
-    storageBucket: 'iderma-20879.appspot.com',
+    storageBucket: 'iderma-20879.firebasestorage.app',
+    androidClientId: '918664536326-mlr1roekgsrctbpc1u50e7aebghr9mp7.apps.googleusercontent.com',
+    iosClientId: '918664536326-v4is5llhjdoo2nj57nrscrmn6gh5jna6.apps.googleusercontent.com',
     iosBundleId: 'com.example.iderma',
   );
 
@@ -82,7 +86,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '918664536326',
     projectId: 'iderma-20879',
     authDomain: 'iderma-20879.firebaseapp.com',
-    storageBucket: 'iderma-20879.appspot.com',
+    storageBucket: 'iderma-20879.firebasestorage.app',
     measurementId: 'G-2GF79SR1S9',
   );
+
 }
